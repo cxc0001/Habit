@@ -1,0 +1,192 @@
+import { motion, AnimatePresence } from 'framer-motion'
+import { CelebrationData } from '@/types'
+import { rarityColors, rarityBgColors, rarityLabels } from '@/data/rewards'
+import { cn } from '@/lib/utils'
+
+interface CelebrationModalProps {
+  data: CelebrationData | null
+  onClose: () => void
+}
+
+export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
+  if (!data) return null
+
+  const { badge, isSeriesComplete, seriesName } = data
+
+  return (
+    <AnimatePresence>
+      {data && (
+        <>
+          {/* 背景遮罩 + 彩带效果 */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-foreground/40 backdrop-blur-sm z-50"
+            onClick={onClose}
+          >
+            {/* 彩带粒子效果 */}
+            {Array.from({ length: 30 }).map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-3 h-3 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  backgroundColor: ['#ff6b6b', '#ffd93d', '#6bcb77', '#4d96ff', '#ff9ff3'][i % 5],
+                }}
+                initial={{ top: '-10%', rotate: 0, scale: 0 }}
+                animate={{
+                  top: '110%',
+                  rotate: 360 * (Math.random() > 0.5 ? 1 : -1),
+                  scale: [0, 1, 1, 0],
+                }}
+                transition={{
+                  duration: 2 + Math.random() * 2,
+                  delay: Math.random() * 0.5,
+                  ease: 'easeOut',
+                }}
+              />
+            ))}
+          </motion.div>
+
+          {/* 弹窗内容 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5, y: 50 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 50 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90%] max-w-sm"
+          >
+            <div className={cn(
+              'rounded-3xl p-8 text-center relative overflow-hidden',
+              isSeriesComplete ? 'bg-gradient-warm' : 'bg-card'
+            )}>
+              {/* 背景光效 */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-radial from-white/30 to-transparent"
+                animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+
+              {/* 星星装饰 */}
+              <motion.div
+                className="absolute top-4 left-4 text-2xl"
+                animate={{ rotate: 360, scale: [1, 1.2, 1] }}
+                transition={{ duration: 3, repeat: Infinity }}
+              >
+                ⭐
+              </motion.div>
+              <motion.div
+                className="absolute top-4 right-4 text-2xl"
+                animate={{ rotate: -360, scale: [1, 1.2, 1] }}
+                transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+              >
+                ✨
+              </motion.div>
+
+              <div className="relative">
+                {/* 标题 */}
+                <motion.h2
+                  className={cn(
+                    'text-2xl font-black mb-4',
+                    isSeriesComplete ? 'text-white' : 'text-foreground'
+                  )}
+                  initial={{ y: -20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {isSeriesComplete ? '🎉 系列完成!' : '🎊 获得徽章!'}
+                </motion.h2>
+
+                {/* 徽章展示 */}
+                <motion.div
+                  className={cn(
+                    'w-24 h-24 mx-auto rounded-3xl flex items-center justify-center mb-4 border-4',
+                    rarityBgColors[badge.rarity],
+                    rarityBorderColors[badge.rarity]
+                  )}
+                  initial={{ scale: 0, rotate: -180 }}
+                  animate={{ scale: 1, rotate: 0 }}
+                  transition={{ type: 'spring', stiffness: 200, delay: 0.3 }}
+                >
+                  <motion.span
+                    className="text-5xl"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                  >
+                    {badge.emoji}
+                  </motion.span>
+                </motion.div>
+
+                {/* 徽章名称 */}
+                <motion.p
+                  className={cn(
+                    'text-xl font-bold mb-1',
+                    isSeriesComplete ? 'text-white' : rarityColors[badge.rarity]
+                  )}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  {badge.name}
+                </motion.p>
+
+                {/* 稀有度标签 */}
+                <motion.span
+                  className={cn(
+                    'inline-block px-3 py-1 rounded-full text-sm font-bold mb-4',
+                    badge.rarity === 'legendary' ? 'bg-white/30 text-white' : rarityBgColors[badge.rarity],
+                    badge.rarity !== 'legendary' && rarityColors[badge.rarity]
+                  )}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ type: 'spring', delay: 0.6 }}
+                >
+                  {rarityLabels[badge.rarity]}
+                </motion.span>
+
+                {/* 系列信息 */}
+                <motion.p
+                  className={cn(
+                    'text-sm mb-6',
+                    isSeriesComplete ? 'text-white/80' : 'text-muted-foreground'
+                  )}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.7 }}
+                >
+                  {seriesName}系列 {isSeriesComplete ? '全部收集完成!' : ''}
+                </motion.p>
+
+                {/* 关闭按钮 */}
+                <motion.button
+                  onClick={onClose}
+                  className={cn(
+                    'px-8 py-3 rounded-2xl font-bold transition-all',
+                    isSeriesComplete
+                      ? 'bg-white text-secondary hover:bg-white/90'
+                      : 'btn-primary'
+                  )}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ delay: 0.8 }}
+                >
+                  太棒了!
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  )
+}
+
+const rarityBorderColors = {
+  common: 'border-muted-foreground/30',
+  uncommon: 'border-primary/50',
+  rare: 'border-accent/50',
+  legendary: 'border-white/50',
+}
