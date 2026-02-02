@@ -18,7 +18,7 @@ type ReportType = 'weekly' | 'monthly' | 'yearly'
 export function ReportModal({ isOpen, onClose }: ReportModalProps) {
   const [activeTab, setActiveTab] = useState<ReportType>('weekly')
   const { generateCurrentReport } = useReports()
-  const { getDailyStats } = useHabits()
+  const { getDailyStats, habits } = useHabits()
 
   const report = generateCurrentReport(activeTab)
   const dailyStats = getDailyStats(activeTab === 'weekly' ? 7 : activeTab === 'monthly' ? 30 : 12)
@@ -28,9 +28,6 @@ export function ReportModal({ isOpen, onClose }: ReportModalProps) {
     { id: 'monthly' as const, label: '月报', icon: BarChart3 },
     { id: 'yearly' as const, label: '年报', icon: TrendingUp },
   ]
-
-  // 计算每个习惯的完成情况用于条形图
-
 
   return (
     <AnimatePresence>
@@ -119,6 +116,42 @@ export function ReportModal({ isOpen, onClose }: ReportModalProps) {
                     </h3>
                     <BarChart data={dailyStats} height={140} />
                   </motion.div>
+
+                  {/* 不同习惯的打卡统计 */}
+                  {habits.length > 0 && (
+                    <motion.div 
+                      className="glass-card rounded-2xl p-4"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.1 }}
+                    >
+                      <h3 className="text-sm font-bold mb-3 flex items-center gap-2">
+                        <BarChart3 className="w-4 h-4 text-primary" />
+                        各习惯打卡统计
+                      </h3>
+                      <div className="space-y-2">
+                        {habits.map((habit) => {
+                          // 计算该习惯在此期间的打卡次数
+                          const checkIns = JSON.parse(localStorage.getItem('microhabits_checkins') || '[]')
+                          const habitCheckIns = checkIns.filter((c: any) => 
+                            c.habitId === habit.id && 
+                            new Date(c.date) >= new Date(report.startDate) && 
+                            new Date(c.date) <= new Date(report.endDate)
+                          ).length
+                          
+                          return (
+                            <div key={habit.id} className="flex items-center justify-between">
+                              <div className="flex items-center gap-2">
+                                <span className="text-xl">{habit.icon}</span>
+                                <span className="text-sm font-medium">{habit.name}</span>
+                              </div>
+                              <span className="text-sm font-bold text-primary">{habitCheckIns}</span>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </motion.div>
+                  )}
 
                   {/* 核心数据卡片 */}
                   <div className="grid grid-cols-2 gap-3">

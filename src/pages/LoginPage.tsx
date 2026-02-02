@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Mail, Lock, User, ArrowRight, Sparkles } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { User, Lock, ArrowRight, Sparkles } from 'lucide-react'
 import { useAuth } from '@/context/AuthContext'
 import { useToast } from '@/context/ToastContext'
 
 export function LoginPage() {
   const [isLogin, setIsLogin] = useState(true)
-  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [username, setUsername] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -22,24 +21,24 @@ export function LoginPage() {
 
     try {
       if (isLogin) {
-        const success = await login(email, password)
-        if (success) {
+        const result = await login(username, password)
+        if (result.success) {
           addToast('欢迎回来! 🎉', 'success')
           navigate('/')
         } else {
-          addToast('邮箱或密码错误', 'error')
+          addToast(result.message || '用户名或密码错误', 'error')
         }
       } else {
         if (!username.trim()) {
           addToast('请输入用户名', 'error')
           return
         }
-        const success = await register(username, email, password)
-        if (success) {
+        const result = await register(username, password)
+        if (result.success) {
           addToast('注册成功! 开始你的习惯之旅吧 🌱', 'success')
           navigate('/')
         } else {
-          addToast('该邮箱已被注册', 'error')
+          addToast(result.message || '该用户名已被注册', 'error')
         }
       }
     } finally {
@@ -151,38 +150,15 @@ export function LoginPage() {
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
-            <AnimatePresence mode="wait">
-              {!isLogin && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  <label className="block text-sm font-bold mb-2">用户名</label>
-                  <div className="relative">
-                    <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
-                    <input
-                      type="text"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      placeholder="输入你的昵称"
-                      className="input-field pl-12"
-                    />
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
             <div>
-              <label className="block text-sm font-bold mb-2">邮箱</label>
+              <label className="block text-sm font-bold mb-2">用户名</label>
               <div className="relative">
-                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+                <User className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                 <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="your@email.com"
+                  type="text"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  placeholder="输入你的昵称"
                   className="input-field pl-12"
                   required
                 />

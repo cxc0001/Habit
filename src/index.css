@@ -277,8 +277,8 @@
 
   @keyframes confettiBurst {
     0% { transform: scale(1); }
-    50% { transform: scale(1.5); opacity: 0.8; }
-    100% { transform: scale(2); opacity: 0; }
+    50% { transform: scale(1.3); opacity: 0.8; }
+    100% { transform: scale(1.5); opacity: 0; }
   }
 }
 
@@ -299,5 +299,30 @@
   /* 手绘风格边框 */
   .hand-drawn {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+
+  /* 移动端适配 */
+  .mobile-container {
+    @apply px-3 py-4;
+  }
+
+  .mobile-card {
+    @apply rounded-2xl p-4;
+  }
+
+  .mobile-btn {
+    @apply px-4 py-2.5 rounded-xl;
+  }
+
+  /* 防止溢出 */
+  .truncate-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .break-word {
+    word-wrap: break-word;
+    word-break: break-word;
   }
 }

@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, BarChart3, Sparkles, ChevronRight, LogOut, Trophy, ChevronDown } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
 import { HabitCard } from '@/components/HabitCard'
-import { HabitFormModal } from '@/components/HabitFormModal'
 import { ReportModal } from '@/components/ReportModal'
 import { BadgeModal } from '@/components/BadgeModal'
 import { CelebrationModal } from '@/components/CelebrationModal'
@@ -12,24 +11,21 @@ import { useHabits } from '@/hooks/useHabits'
 import { useFarm } from '@/hooks/useFarm'
 import { useAuth } from '@/context/AuthContext'
 import { useToast } from '@/context/ToastContext'
-import { Habit } from '@/types'
 import { useNavigate } from 'react-router-dom'
 import { getRewardById, getRewardsBySeries, categoryInfo, seriesGroups, RewardCategory } from '@/data/rewards'
 import { cn } from '@/lib/utils'
 
 export function HomePage() {
   const { user, logout } = useAuth()
-  const { habits, checkIn, isCheckedInToday, getStreak, getTodayProgress, updateHabit, deleteHabit } = useHabits()
+  const { habits, checkIn, isCheckedInToday, getStreak, getTodayProgress } = useHabits()
   const { inventory, activeProject, celebration, startProject, progressProject, clearCelebration, getProgress } = useFarm()
   const { addToast } = useToast()
   const navigate = useNavigate()
 
-  const [isFormOpen, setIsFormOpen] = useState(false)
   const [isReportOpen, setIsReportOpen] = useState(false)
   const [isBadgeOpen, setIsBadgeOpen] = useState(false)
   const [showSeriesSelector, setShowSeriesSelector] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<RewardCategory>('plant')
-  const [editingHabit, setEditingHabit] = useState<Habit | null>(null)
 
   const { completed, total } = getTodayProgress()
   const projectProgress = getProgress()
@@ -44,7 +40,7 @@ export function HomePage() {
       if (activeProject) {
         const result = progressProject()
         if (result.completed && result.celebration) {
-          // 庆祝弹窗会自动显示
+          // 庆服弹窗会自动显示
         } else if (result.progressed) {
           addToast('打卡成功! 培养进度+1', 'success')
         }
@@ -69,26 +65,6 @@ export function HomePage() {
       addToast(`开始培养 ${firstItem?.emoji} ${seriesName}系列!`, 'success')
       setShowSeriesSelector(false)
     }
-  }
-
-  const handleEdit = (habit: Habit) => {
-    setEditingHabit(habit)
-    setIsFormOpen(true)
-  }
-
-  const handleDelete = (habit: Habit) => {
-    if (confirm(`确定要删除"${habit.name}"吗?`)) {
-      deleteHabit(habit.id)
-      addToast('习惯已删除', 'info')
-    }
-  }
-
-  const handleFormSubmit = (name: string, description: string, icon: string, color: string) => {
-    if (editingHabit) {
-      updateHabit(editingHabit.id, { name, description, icon, color })
-      addToast('习惯已更新', 'success')
-    }
-    setEditingHabit(null)
   }
 
   const handleLogout = () => {
@@ -214,7 +190,7 @@ export function HomePage() {
                 {/* 系列预览 */}
                 <div className="mt-4 pt-4 border-t border-dashed border-border">
                   <p className="text-xs text-muted-foreground mb-2">系列徽章:</p>
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 flex-wrap">
                     {getRewardsBySeries(activeProject.seriesName).map((item, i) => {
                       const isUnlocked = inventory.badges.some(b => b.name === item.possibleHarvests[0].name)
                       const isCurrent = item.id === activeProject.rewardItemId
@@ -277,7 +253,7 @@ export function HomePage() {
                       className="mt-4 overflow-hidden"
                     >
                       {/* 分类切换 */}
-                      <div className="flex justify-center gap-2 mb-4">
+                      <div className="flex justify-center gap-2 mb-4 flex-wrap">
                         {(['plant', 'animal', 'cooking'] as const).map(cat => (
                           <button
                             key={cat}
@@ -295,7 +271,7 @@ export function HomePage() {
                       </div>
 
                       {/* 系列列表 */}
-                      <div className="grid grid-cols-3 gap-2 max-h-48 overflow-y-auto">
+                      <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 max-h-48 overflow-y-auto">
                         {seriesGroups[selectedCategory].map((seriesName, i) => {
                           const firstItem = getRewardsBySeries(seriesName)[0]
                           const isCompleted = inventory.completedSeries.includes(seriesName)
@@ -332,8 +308,8 @@ export function HomePage() {
           </motion.div>
 
           {/* 快捷操作栏 */}
-          <div className="flex items-center justify-between mt-4">
-            <div className="flex items-center gap-2">
+          <div className="flex items-center justify-between mt-4 flex-wrap gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <motion.button
                 onClick={() => setIsBadgeOpen(true)}
                 className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-warm text-white text-sm font-bold"
@@ -359,7 +335,7 @@ export function HomePage() {
           </div>
         </div>
 
-        {/* Habits Section */}
+        {/* Habits Section - Only for checking in, no edit/delete */}
         <div className="space-y-4">
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-bold flex items-center gap-2">
@@ -415,8 +391,8 @@ export function HomePage() {
                     isCheckedIn={isCheckedInToday(habit.id)}
                     streak={getStreak(habit.id)}
                     onCheckIn={() => handleCheckIn(habit.id)}
-                    onEdit={() => handleEdit(habit)}
-                    onDelete={() => handleDelete(habit)}
+                    onEdit={() => {}} // 移除编辑功能
+                    onDelete={() => {}} // 移除删除功能
                   />
                 </motion.div>
               ))}
@@ -426,15 +402,6 @@ export function HomePage() {
       </main>
 
       {/* Modals */}
-      <HabitFormModal
-        isOpen={isFormOpen}
-        onClose={() => {
-          setIsFormOpen(false)
-          setEditingHabit(null)
-        }}
-        onSubmit={handleFormSubmit}
-        habit={editingHabit}
-      />
       <ReportModal isOpen={isReportOpen} onClose={() => setIsReportOpen(false)} />
       <BadgeModal isOpen={isBadgeOpen} onClose={() => setIsBadgeOpen(false)} />
       <CelebrationModal data={celebration} onClose={clearCelebration} />
