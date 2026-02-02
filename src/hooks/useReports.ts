@@ -49,7 +49,10 @@ export function useReports() {
 
     const totalCheckIns = checkIns.length
     const successRate = maxPossibleCheckIns > 0 ? Math.round((totalCheckIns / maxPossibleCheckIns) * 100) : 0
-    const totalPoints = checkIns.length
+    
+    // 限制每日积分，每天最多获得2个积分，无论打卡多少个习惯
+    const checkInDates = [...new Set(checkIns.map(c => c.date))] // 获取不同的打卡日期
+    const totalPoints = checkInDates.length * 2 // 每天最多2个积分
 
     // Calculate streaks
     const sortedDates = [...new Set(checkIns.map((c) => c.date))].sort()

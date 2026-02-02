@@ -55,10 +55,10 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.5, y: 50 }}
             transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90%] max-w-sm"
+            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-[90%] max-w-sm max-h-[90vh] overflow-y-auto"
           >
             <div className={cn(
-              'rounded-3xl p-8 text-center relative overflow-hidden',
+              'rounded-3xl p-6 text-center relative overflow-hidden',
               isSeriesComplete ? 'bg-gradient-warm' : 'bg-card'
             )}>
               {/* 背景光效 */}
@@ -84,11 +84,11 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                 ✨
               </motion.div>
 
-              <div className="relative">
+              <div className="relative space-y-3">
                 {/* 标题 */}
                 <motion.h2
                   className={cn(
-                    'text-2xl font-black mb-4',
+                    'text-xl md:text-2xl font-black',
                     isSeriesComplete ? 'text-white' : 'text-foreground'
                   )}
                   initial={{ y: -20, opacity: 0 }}
@@ -101,7 +101,7 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                 {/* 徽章展示 */}
                 <motion.div
                   className={cn(
-                    'w-24 h-24 mx-auto rounded-3xl flex items-center justify-center mb-4 border-4',
+                    'w-20 h-20 md:w-24 md:h-24 mx-auto rounded-2xl md:rounded-3xl flex items-center justify-center border-4',
                     rarityBgColors[badge.rarity],
                     rarityBorderColors[badge.rarity]
                   )}
@@ -110,7 +110,7 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                   transition={{ type: 'spring', stiffness: 200, delay: 0.3 }}
                 >
                   <motion.span
-                    className="text-5xl"
+                    className="text-4xl md:text-5xl"
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 0.5, delay: 0.8 }}
                   >
@@ -121,7 +121,7 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                 {/* 徽章名称 */}
                 <motion.p
                   className={cn(
-                    'text-xl font-bold mb-1',
+                    'text-lg md:text-xl font-bold',
                     isSeriesComplete ? 'text-white' : rarityColors[badge.rarity]
                   )}
                   initial={{ opacity: 0 }}
@@ -134,7 +134,7 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                 {/* 稀有度标签 */}
                 <motion.span
                   className={cn(
-                    'inline-block px-3 py-1 rounded-full text-sm font-bold mb-4',
+                    'inline-block px-2.5 md:px-3 py-0.5 md:py-1 rounded-full text-xs md:text-sm font-bold',
                     badge.rarity === 'legendary' ? 'bg-white/30 text-white' : rarityBgColors[badge.rarity],
                     badge.rarity !== 'legendary' && rarityColors[badge.rarity]
                   )}
@@ -148,7 +148,7 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                 {/* 系列信息 */}
                 <motion.p
                   className={cn(
-                    'text-sm mb-6',
+                    'text-xs md:text-sm',
                     isSeriesComplete ? 'text-white/80' : 'text-muted-foreground'
                   )}
                   initial={{ opacity: 0 }}
@@ -162,7 +162,7 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                 <motion.button
                   onClick={onClose}
                   className={cn(
-                    'px-8 py-3 rounded-2xl font-bold transition-all',
+                    'px-6 py-2.5 md:px-8 md:py-3 rounded-xl md:rounded-2xl font-bold text-sm md:text-base transition-all',
                     isSeriesComplete
                       ? 'bg-white text-secondary hover:bg-white/90'
                       : 'btn-primary'

@@ -4,6 +4,7 @@ import { X, BarChart3, Calendar, TrendingUp, Award, Leaf, Flame } from 'lucide-r
 import { useReports } from '@/hooks/useReports'
 import { useHabits } from '@/hooks/useHabits'
 import { BarChart } from '@/components/Charts'
+import { DailyStats } from '@/types'
 import { format } from 'date-fns'
 import { zhCN } from 'date-fns/locale'
 import { cn } from '@/lib/utils'
@@ -18,10 +19,12 @@ type ReportType = 'weekly' | 'monthly' | 'yearly'
 export function ReportModal({ isOpen, onClose }: ReportModalProps) {
   const [activeTab, setActiveTab] = useState<ReportType>('weekly')
   const { generateCurrentReport } = useReports()
-  const { getDailyStats, habits } = useHabits()
+  const { getDailyStats, getMonthlyStats, habits } = useHabits()
 
   const report = generateCurrentReport(activeTab)
-  const dailyStats = getDailyStats(activeTab === 'weekly' ? 7 : activeTab === 'monthly' ? 30 : 12)
+  const dailyStats = activeTab === 'yearly' 
+    ? getMonthlyStats(12) 
+    : getDailyStats(activeTab === 'weekly' ? 7 : 30)
 
   const tabs = [
     { id: 'weekly' as const, label: '周报', icon: Calendar },
@@ -38,7 +41,11 @@ export function ReportModal({ isOpen, onClose }: ReportModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-foreground/20 backdrop-blur-sm z-50"
-            onClick={onClose}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) {
+                onClose()
+              }
+            }}
           />
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -112,9 +119,13 @@ export function ReportModal({ isOpen, onClose }: ReportModalProps) {
                   >
                     <h3 className="text-sm font-bold mb-3 flex items-center gap-2">
                       <TrendingUp className="w-4 h-4 text-primary" />
-                      打卡趋势
+                      {activeTab === 'yearly' ? '月打卡趋势' : '打卡趋势'}
                     </h3>
-                    <BarChart data={dailyStats} height={140} />
+                    <div className="overflow-x-auto pb-2">
+                      <div className="min-w-max">
+                        <BarChart data={dailyStats} height={140} />
+                      </div>
+                    </div>
                   </motion.div>
 
                   {/* 不同习惯的打卡统计 */}

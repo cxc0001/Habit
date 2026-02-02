@@ -75,7 +75,7 @@ export function BackgroundDecorations() {
               "M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z",
             ]
           }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }}
         />
       </svg>
     </div>

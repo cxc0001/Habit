@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Check, Flame, MoreVertical, Pencil, Trash2 } from 'lucide-react'
+import { Check, Flame } from 'lucide-react'
 import { Habit } from '@/types'
 import { cn } from '@/lib/utils'
 
@@ -9,8 +9,6 @@ interface HabitCardProps {
   isCheckedIn: boolean
   streak: number
   onCheckIn: () => void
-  onEdit: () => void
-  onDelete: () => void
 }
 
 export function HabitCard({
@@ -18,10 +16,7 @@ export function HabitCard({
   isCheckedIn,
   streak,
   onCheckIn,
-  onEdit,
-  onDelete,
 }: HabitCardProps) {
-  const [showMenu, setShowMenu] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
 
   const handleCheckIn = () => {
@@ -145,56 +140,6 @@ export function HabitCard({
             </>
           )}
         </motion.button>
-
-        {/* 菜单 */}
-        <div className="relative">
-          <motion.button
-            onClick={() => setShowMenu(!showMenu)}
-            className="p-2 hover:bg-muted rounded-xl transition-all"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            <MoreVertical className="w-5 h-5 text-muted-foreground" />
-          </motion.button>
-
-          {showMenu && (
-            <>
-              <div
-                className="fixed inset-0 z-10"
-                onClick={() => setShowMenu(false)}
-              />
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: -10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                className="absolute right-0 top-full mt-2 bg-card border-2 border-border rounded-2xl py-2 z-20 min-w-[130px] overflow-hidden"
-                style={{ boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}
-              >
-                <motion.button
-                  onClick={() => {
-                    setShowMenu(false)
-                    onEdit()
-                  }}
-                  className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-medium hover:bg-muted transition-colors"
-                  whileHover={{ x: 4 }}
-                >
-                  <Pencil className="w-4 h-4 text-primary" />
-                  编辑
-                </motion.button>
-                <motion.button
-                  onClick={() => {
-                    setShowMenu(false)
-                    onDelete()
-                  }}
-                  className="w-full flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-destructive hover:bg-destructive/10 transition-colors"
-                  whileHover={{ x: 4 }}
-                >
-                  <Trash2 className="w-4 h-4" />
-                  删除
-                </motion.button>
-              </motion.div>
-            </>
-          )}
-        </div>
       </div>
     </motion.div>
   )

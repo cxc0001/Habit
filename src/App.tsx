@@ -5,6 +5,7 @@ import { ToastContainer } from '@/components/Toast'
 import { LoginPage } from '@/pages/LoginPage'
 import { HomePage } from '@/pages/HomePage'
 import { ManagePage } from '@/pages/ManagePage'
+import { ReportsPage } from '@/pages/ReportsPage'
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, isLoading } = useAuth()
@@ -66,6 +67,14 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <ManagePage />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/reports"
+        element={
+          <ProtectedRoute>
+            <ReportsPage />
           </ProtectedRoute>
         }
       />

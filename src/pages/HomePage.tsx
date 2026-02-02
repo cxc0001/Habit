@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, BarChart3, Sparkles, ChevronRight, LogOut, Trophy, ChevronDown } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
 import { HabitCard } from '@/components/HabitCard'
-import { ReportModal } from '@/components/ReportModal'
+
 import { BadgeModal } from '@/components/BadgeModal'
 import { CelebrationModal } from '@/components/CelebrationModal'
 import { BackgroundDecorations } from '@/components/BackgroundDecorations'
@@ -22,7 +22,7 @@ export function HomePage() {
   const { addToast } = useToast()
   const navigate = useNavigate()
 
-  const [isReportOpen, setIsReportOpen] = useState(false)
+
   const [isBadgeOpen, setIsBadgeOpen] = useState(false)
   const [showSeriesSelector, setShowSeriesSelector] = useState(false)
   const [selectedCategory, setSelectedCategory] = useState<RewardCategory>('plant')
@@ -77,7 +77,7 @@ export function HomePage() {
       <BackgroundDecorations />
       <Navigation />
 
-      <main className="max-w-4xl mx-auto px-4 py-6 relative z-10">
+      <main className="max-w-4xl mx-auto px-4 py-4 md:py-6 relative z-10">
         {/* Header Section */}
         <div className="mb-6">
           {/* Mobile User Info */}
@@ -110,7 +110,7 @@ export function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass-card rounded-3xl p-6 relative overflow-hidden"
+            className="glass-card rounded-3xl p-4 md:p-6 relative overflow-hidden"
           >
             {/* 装饰 */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-cute opacity-10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
@@ -135,16 +135,16 @@ export function HomePage() {
                   </button>
                 </div>
 
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-4">
                   {/* 动画展示区 */}
                   <motion.div
                     className={cn(
-                      'w-28 h-28 rounded-3xl bg-muted/50 flex items-center justify-center relative',
+                      'w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-muted/50 flex items-center justify-center relative',
                       'border-2 border-dashed border-primary/30'
                     )}
                   >
                     <motion.span
-                      className={cn('text-6xl', currentItem.animationClass)}
+                      className={cn('text-4xl md:text-5xl', currentItem.animationClass)}
                       key={activeProject.currentCheckIns}
                       initial={{ scale: 0.8 }}
                       animate={{ scale: 1 }}
@@ -155,20 +155,20 @@ export function HomePage() {
                     
                     {/* 生长动画光环 */}
                     <motion.div
-                      className="absolute inset-0 rounded-3xl border-2 border-primary/30"
+                      className="absolute inset-0 rounded-2xl border-2 border-primary/30"
                       animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0, 0.5] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     />
                   </motion.div>
 
-                  <div className="flex-1">
-                    <h3 className="text-xl font-black mb-1">{currentItem.name}</h3>
-                    <p className="text-sm text-muted-foreground mb-3">
+                  <div className="flex-1 min-w-0"> {/* 添加min-w-0防止flex溢出 */}
+                    <h3 className="text-lg md:text-xl font-black mb-1 truncate">{currentItem.name}</h3>
+                    <p className="text-xs md:text-sm text-muted-foreground mb-2">
                       继续打卡来培养它吧!
                     </p>
                     
                     {/* 进度条 */}
-                    <div className="relative h-4 bg-muted rounded-full overflow-hidden">
+                    <div className="relative h-3 md:h-4 bg-muted rounded-full overflow-hidden">
                       <motion.div
                         className="absolute inset-y-0 left-0 bg-gradient-primary rounded-full"
                         initial={{ width: 0 }}
@@ -187,10 +187,10 @@ export function HomePage() {
                   </div>
                 </div>
 
-                {/* 系列预览 */}
-                <div className="mt-4 pt-4 border-t border-dashed border-border">
-                  <p className="text-xs text-muted-foreground mb-2">系列徽章:</p>
-                  <div className="flex gap-2 flex-wrap">
+                {/* 系列预览 - 减少间距和尺寸 */}
+                <div className="mt-3 pt-3 border-t border-dashed border-border">
+                  <p className="text-xs text-muted-foreground mb-1.5">系列徽章:</p>
+                  <div className="flex gap-1.5 flex-wrap">
                     {getRewardsBySeries(activeProject.seriesName).map((item, i) => {
                       const isUnlocked = inventory.badges.some(b => b.name === item.possibleHarvests[0].name)
                       const isCurrent = item.id === activeProject.rewardItemId
@@ -198,7 +198,7 @@ export function HomePage() {
                         <motion.div
                           key={item.id}
                           className={cn(
-                            'w-10 h-10 rounded-xl flex items-center justify-center text-xl border-2',
+                            'w-8 h-8 rounded-lg flex items-center justify-center text-lg border',
                             isUnlocked 
                               ? 'bg-primary/10 border-primary/30' 
                               : isCurrent
@@ -218,22 +218,22 @@ export function HomePage() {
               </div>
             ) : (
               // 没有培养项目 - 选择器
-              <div className="text-center py-4">
+              <div className="text-center py-2">
                 <motion.div
-                  className="text-6xl mb-4"
+                  className="text-4xl md:text-5xl mb-2"
                   animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
                   transition={{ duration: 3, repeat: Infinity }}
                 >
                   🌱
                 </motion.div>
-                <h3 className="text-xl font-black mb-2">选择一个系列开始培养</h3>
-                <p className="text-sm text-muted-foreground mb-4">
+                <h3 className="text-lg md:text-xl font-black mb-1">选择一个系列开始培养</h3>
+                <p className="text-xs md:text-sm text-muted-foreground mb-3">
                   每次打卡都会推进培养进度，完成后获得徽章!
                 </p>
                 
                 <motion.button
                   onClick={() => setShowSeriesSelector(!showSeriesSelector)}
-                  className="btn-primary inline-flex items-center gap-2"
+                  className="btn-primary inline-flex items-center gap-2 text-sm py-2 px-4"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -308,28 +308,28 @@ export function HomePage() {
           </motion.div>
 
           {/* 快捷操作栏 */}
-          <div className="flex items-center justify-between mt-4 flex-wrap gap-2">
+          <div className="flex items-center justify-between mt-3 flex-wrap gap-2">
             <div className="flex items-center gap-2 flex-wrap">
               <motion.button
                 onClick={() => setIsBadgeOpen(true)}
-                className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-gradient-warm text-white text-sm font-bold"
+                className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-gradient-warm text-white text-xs md:text-sm font-bold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Trophy className="w-4 h-4" />
+                <Trophy className="w-3 h-3 md:w-4 md:h-4" />
                 徽章 {inventory.badges.length}
               </motion.button>
               <motion.button
-                onClick={() => setIsReportOpen(true)}
-                className="flex items-center gap-2 px-4 py-2 rounded-2xl bg-accent/15 text-accent text-sm font-bold border-2 border-accent/30"
+                onClick={() => navigate('/reports')}
+                className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-accent/15 text-accent text-xs md:text-sm font-bold border border-accent/30"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <BarChart3 className="w-4 h-4" />
+                <BarChart3 className="w-3 h-3 md:w-4 md:h-4" />
                 统计
               </motion.button>
             </div>
-            <div className="text-sm text-muted-foreground font-medium">
+            <div className="text-xs md:text-sm text-muted-foreground font-medium">
               今日 <span className="text-primary font-bold">{completed}</span>/{total}
             </div>
           </div>
@@ -365,7 +365,7 @@ export function HomePage() {
               </motion.div>
               <h3 className="font-bold text-xl mb-2">开始你的习惯之旅</h3>
               <p className="text-muted-foreground text-sm mb-6 font-medium">
-                添加微习惯，每天打卡培养可爱的动植物!
+                去管理页面添加你的第一个习惯吧!
               </p>
               <motion.button
                 onClick={() => navigate('/manage')}
@@ -374,7 +374,7 @@ export function HomePage() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Plus className="w-5 h-5 mr-2" />
-                添加第一个习惯
+                去管理页面添加
               </motion.button>
             </motion.div>
           ) : (
@@ -391,8 +391,6 @@ export function HomePage() {
                     isCheckedIn={isCheckedInToday(habit.id)}
                     streak={getStreak(habit.id)}
                     onCheckIn={() => handleCheckIn(habit.id)}
-                    onEdit={() => {}} // 移除编辑功能
-                    onDelete={() => {}} // 移除删除功能
                   />
                 </motion.div>
               ))}
@@ -402,7 +400,7 @@ export function HomePage() {
       </main>
 
       {/* Modals */}
-      <ReportModal isOpen={isReportOpen} onClose={() => setIsReportOpen(false)} />
+
       <BadgeModal isOpen={isBadgeOpen} onClose={() => setIsBadgeOpen(false)} />
       <CelebrationModal data={celebration} onClose={clearCelebration} />
     </div>

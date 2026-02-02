@@ -761,7 +761,7 @@ const saladSeries: RewardItem[] = [
     possibleHarvests: [{ name: '蔬菜沙拉', emoji: '🥗', rarity: 'uncommon', points: 0 }],
   },
   {
-    id: 'salad_3', name: '水果沙拉', emoji: ' bowl with spoon', category: 'cooking', series: '沙拉',
+    id: 'salad_3', name: '水果沙拉', emoji: '🥣', category: 'cooking', series: '沙拉',
     checkInsRequired: 10, animationClass: 'cooking-bubble',
     possibleHarvests: [{ name: '水果沙拉', emoji: '🥣', rarity: 'rare', points: 0 }],
   },
@@ -769,6 +769,342 @@ const saladSeries: RewardItem[] = [
     id: 'salad_4', name: '凯撒沙拉', emoji: '🥗', category: 'cooking', series: '沙拉',
     checkInsRequired: 15, animationClass: 'sparkle',
     possibleHarvests: [{ name: '凯撒沙拉', emoji: '🥗', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 蛋挞系列
+const eggTartSeries: RewardItem[] = [
+  {
+    id: 'eggTart_1', name: '蛋液', emoji: '液体', category: 'cooking', series: '蛋挞',
+    checkInsRequired: 3, animationClass: 'cooking-bubble',
+    possibleHarvests: [{ name: '蛋液', emoji: '🍳', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'eggTart_2', name: '挞皮', emoji: '🥮', category: 'cooking', series: '蛋挞',
+    checkInsRequired: 5, animationClass: 'cooking-bubble',
+    possibleHarvests: [{ name: '挞皮', emoji: '🥮', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'eggTart_3', name: '蛋挞', emoji: '挞', category: 'cooking', series: '蛋挞',
+    checkInsRequired: 10, animationClass: 'cooking-bubble',
+    possibleHarvests: [{ name: '蛋挞', emoji: '🥮', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'eggTart_4', name: '葡式蛋挞', emoji: '挞', category: 'cooking', series: '蛋挞',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '葡式蛋挞', emoji: '🥮', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 豆腐系列
+const tofuSeries: RewardItem[] = [
+  {
+    id: 'tofu_1', name: '黄豆', emoji: '🌾', category: 'cooking', series: '豆腐',
+    checkInsRequired: 3, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '黄豆', emoji: '🌾', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'tofu_2', name: '豆浆', emoji: '🥛', category: 'cooking', series: '豆腐',
+    checkInsRequired: 5, animationClass: 'cooking-bubble',
+    possibleHarvests: [{ name: '豆浆', emoji: '🥛', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'tofu_3', name: '嫩豆腐', emoji: '🍮', category: 'cooking', series: '豆腐',
+    checkInsRequired: 10, animationClass: 'cooking-bubble',
+    possibleHarvests: [{ name: '嫩豆腐', emoji: '🍮', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'tofu_4', name: '麻婆豆腐', emoji: '🌶️', category: 'cooking', series: '豆腐',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '麻婆豆腐', emoji: '🌶️', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 茶具系列
+const teawareSeries: RewardItem[] = [
+  {
+    id: 'teaware_1', name: '茶壶', emoji: '🏺', category: 'cooking', series: '茶具',
+    checkInsRequired: 3, animationClass: 'cooking-bubble',
+    possibleHarvests: [{ name: '茶壶', emoji: '🏺', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'teaware_2', name: '茶杯', emoji: '🍵', category: 'cooking', series: '茶具',
+    checkInsRequired: 5, animationClass: 'cooking-bubble',
+    possibleHarvests: [{ name: '茶杯', emoji: '🍵', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'teaware_3', name: '茶盘', emoji: '🫖', category: 'cooking', series: '茶具',
+    checkInsRequired: 10, animationClass: 'cooking-bubble',
+    possibleHarvests: [{ name: '茶盘', emoji: '🫖', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'teaware_4', name: '紫砂壶', emoji: '🏺', category: 'cooking', series: '茶具',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '紫砂壶', emoji: '🏺', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 花系列
+const flowerSeries: RewardItem[] = [
+  {
+    id: 'flower_1', name: '花种', emoji: '🌱', category: 'plant', series: '花',
+    checkInsRequired: 3, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '花种', emoji: '🌱', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'flower_2', name: '花苞', emoji: '🌷', category: 'plant', series: '花',
+    checkInsRequired: 5, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '花苞', emoji: '🌷', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'flower_3', name: '盛开', emoji: '🌸', category: 'plant', series: '花',
+    checkInsRequired: 10, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '盛开', emoji: '🌸', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'flower_4', name: '花园', emoji: '🌺', category: 'plant', series: '花',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '花园', emoji: '🌺', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 多肉系列
+const succulentSeries: RewardItem[] = [
+  {
+    id: 'succulent_1', name: '多肉叶', emoji: '🌿', category: 'plant', series: '多肉',
+    checkInsRequired: 3, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '多肉叶', emoji: '🌿', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'succulent_2', name: '小多肉', emoji: '🌵', category: 'plant', series: '多肉',
+    checkInsRequired: 5, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '小多肉', emoji: '🌵', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'succulent_3', name: '群生多肉', emoji: '🌿', category: 'plant', series: '多肉',
+    checkInsRequired: 10, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '群生多肉', emoji: '🌿', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'succulent_4', name: '多肉花园', emoji: '💐', category: 'plant', series: '多肉',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '多肉花园', emoji: '💐', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 仙人掌系列
+const cactusSeries: RewardItem[] = [
+  {
+    id: 'cactus_1', name: '仙人掌苗', emoji: '🌵', category: 'plant', series: '仙人掌',
+    checkInsRequired: 3, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '仙人掌苗', emoji: '🌵', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'cactus_2', name: '开花仙人掌', emoji: '🌵', category: 'plant', series: '仙人掌',
+    checkInsRequired: 5, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '开花仙人掌', emoji: '🌸', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'cactus_3', name: '巨型仙人掌', emoji: '🌵', category: 'plant', series: '仙人掌',
+    checkInsRequired: 10, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '巨型仙人掌', emoji: '🌵', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'cactus_4', name: '沙漠绿洲', emoji: '🏜️', category: 'plant', series: '仙人掌',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '沙漠绿洲', emoji: '🏜️', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 兔子系列 (补充之前遗漏的)
+const rabbitSeriesNew: RewardItem[] = [
+  {
+    id: 'rabbit_new_1', name: '兔宝宝', emoji: '🐰', category: 'animal', series: '兔子',
+    checkInsRequired: 3, animationClass: 'chicken-walk',
+    possibleHarvests: [{ name: '兔宝宝', emoji: '🐰', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'rabbit_new_2', name: '长耳兔', emoji: '🐰', category: 'animal', series: '兔子',
+    checkInsRequired: 5, animationClass: 'chicken-walk',
+    possibleHarvests: [{ name: '长耳兔', emoji: '🐰', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'rabbit_new_3', name: '棉花兔', emoji: '🐰', category: 'animal', series: '兔子',
+    checkInsRequired: 10, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '棉花兔', emoji: '🐰', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'rabbit_new_4', name: '月宫玉兔', emoji: '🐰', category: 'animal', series: '兔子',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '月宫玉兔', emoji: '🐰', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 仓鼠系列
+const hamsterSeries: RewardItem[] = [
+  {
+    id: 'hamster_1', name: '仓鼠球', emoji: '⚽', category: 'animal', series: '仓鼠',
+    checkInsRequired: 3, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '仓鼠球', emoji: '⚽', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'hamster_2', name: '胖仓鼠', emoji: '🐹', category: 'animal', series: '仓鼠',
+    checkInsRequired: 5, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '胖仓鼠', emoji: '🐹', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'hamster_3', name: '金丝熊', emoji: '🐹', category: 'animal', series: '仓鼠',
+    checkInsRequired: 10, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '金丝熊', emoji: '🐹', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'hamster_4', name: '仓鼠王国', emoji: '🏰', category: 'animal', series: '仓鼠',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '仓鼠王国', emoji: '🏰', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 鹦鹉系列
+const parrotSeries: RewardItem[] = [
+  {
+    id: 'parrot_1', name: '鹦鹉蛋', emoji: '🥚', category: 'animal', series: '鹦鹉',
+    checkInsRequired: 3, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '鹦鹉蛋', emoji: '🥚', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'parrot_2', name: '小鹦鹉', emoji: '🦜', category: 'animal', series: '鹦鹉',
+    checkInsRequired: 5, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '小鹦鹉', emoji: '🦜', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'parrot_3', name: '彩色鹦鹉', emoji: '🦜', category: 'animal', series: '鹦鹉',
+    checkInsRequired: 10, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '彩色鹦鹉', emoji: '🦜', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'parrot_4', name: '会说话的鸟', emoji: '🦜', category: 'animal', series: '鹦鹉',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '会说话的鸟', emoji: '🦜', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 狐狸系列
+const foxSeries: RewardItem[] = [
+  {
+    id: 'fox_1', name: '狐崽', emoji: '🦊', category: 'animal', series: '狐狸',
+    checkInsRequired: 3, animationClass: 'chicken-walk',
+    possibleHarvests: [{ name: '狐崽', emoji: '🦊', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'fox_2', name: '灵狐', emoji: '🦊', category: 'animal', series: '狐狸',
+    checkInsRequired: 5, animationClass: 'chicken-walk',
+    possibleHarvests: [{ name: '灵狐', emoji: '🦊', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'fox_3', name: '九尾狐', emoji: '🦊', category: 'animal', series: '狐狸',
+    checkInsRequired: 10, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '九尾狐', emoji: '🦊', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'fox_4', name: '仙狐', emoji: '🦊', category: 'animal', series: '狐狸',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '仙狐', emoji: '🦊', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 狗系列
+const dogSeries: RewardItem[] = [
+  {
+    id: 'dog_1', name: '狗崽', emoji: '🐶', category: 'animal', series: '狗',
+    checkInsRequired: 3, animationClass: 'chicken-walk',
+    possibleHarvests: [{ name: '狗崽', emoji: '🐶', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'dog_2', name: '金毛', emoji: '🐕', category: 'animal', series: '狗',
+    checkInsRequired: 5, animationClass: 'chicken-walk',
+    possibleHarvests: [{ name: '金毛', emoji: '🐕', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'dog_3', name: '导盲犬', emoji: '🐕', category: 'animal', series: '狗',
+    checkInsRequired: 10, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '导盲犬', emoji: '🐕', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'dog_4', name: '功勋犬', emoji: '🏅', category: 'animal', series: '狗',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '功勋犬', emoji: '🏅', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 猫系列
+const catSeries: RewardItem[] = [
+  {
+    id: 'cat_1', name: '猫崽', emoji: '🐱', category: 'animal', series: '猫',
+    checkInsRequired: 3, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '猫崽', emoji: '🐱', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'cat_2', name: '英短', emoji: '🐱', category: 'animal', series: '猫',
+    checkInsRequired: 5, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '英短', emoji: '🐱', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'cat_3', name: '布偶猫', emoji: '🐱', category: 'animal', series: '猫',
+    checkInsRequired: 10, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '布偶猫', emoji: '🐱', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'cat_4', name: '猫界帝王', emoji: '👑', category: 'animal', series: '猫',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '猫界帝王', emoji: '👑', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 蝴蝶系列
+const butterflySeries: RewardItem[] = [
+  {
+    id: 'butterfly_1', name: '蝴蝶卵', emoji: '🥚', category: 'animal', series: '蝴蝶',
+    checkInsRequired: 3, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '蝴蝶卵', emoji: '🥚', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'butterfly_2', name: '毛毛虫', emoji: '🐛', category: 'animal', series: '蝴蝶',
+    checkInsRequired: 5, animationClass: 'plant-sway',
+    possibleHarvests: [{ name: '毛毛虫', emoji: '🐛', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'butterfly_3', name: '蝶蛹', emoji: '茧', category: 'animal', series: '蝴蝶',
+    checkInsRequired: 10, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '蝶蛹', emoji: '茧', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'butterfly_4', name: '彩蝶飞舞', emoji: '🦋', category: 'animal', series: '蝴蝶',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '彩蝶飞舞', emoji: '🦋', rarity: 'legendary', points: 0 }],
+  },
+]
+
+// 蜜袋鼯系列
+const gliderSeries: RewardItem[] = [
+  {
+    id: 'glider_1', name: '蜜袋鼯宝宝', emoji: '🦡', category: 'animal', series: '蜜袋鼯',
+    checkInsRequired: 3, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '蜜袋鼯宝宝', emoji: '🦡', rarity: 'common', points: 0 }],
+  },
+  {
+    id: 'glider_2', name: '滑翔蜜袋鼯', emoji: '🦡', category: 'animal', series: '蜜袋鼯',
+    checkInsRequired: 5, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '滑翔蜜袋鼯', emoji: '🦡', rarity: 'uncommon', points: 0 }],
+  },
+  {
+    id: 'glider_3', name: '森林精灵', emoji: '🌲', category: 'animal', series: '蜜袋鼯',
+    checkInsRequired: 10, animationClass: 'float-gentle',
+    possibleHarvests: [{ name: '森林精灵', emoji: '🌲', rarity: 'rare', points: 0 }],
+  },
+  {
+    id: 'glider_4', name: '梦幻滑翔者', emoji: '✨', category: 'animal', series: '蜜袋鼯',
+    checkInsRequired: 15, animationClass: 'sparkle',
+    possibleHarvests: [{ name: '梦幻滑翔者', emoji: '✨', rarity: 'legendary', points: 0 }],
   },
 ]
 
@@ -988,38 +1324,7 @@ const burgerSeries: RewardItem[] = [
   },
 ]
 
-// 所有植物
-export const plants: RewardItem[] = [
-  ...cornSeries,
-  ...sunflowerSeries,
-  ...strawberrySeries,
-  ...roseSeries,
-  ...watermelonSeries,
-  ...carrotSeries,
-  ...tomatoSeries,
-  ...cherrySeries,
-  ...appleSeries,
-  ...teaLeafSeries,
-  ...bambooSeries,
-  ...coconutSeries,
-  ...pomegranateSeries,
-]
 
-// 所有动物
-export const animals: RewardItem[] = [
-  ...chickenSeries,
-  ...cowSeries,
-  ...beeSeries,
-  ...rabbitSeries,
-  ...pigSeries,
-  ...sheepSeries,
-  ...duckSeries,
-  ...fishSeries,
-  ...monkeySeries,
-  ...penguinSeries,
-  ...owlSeries,
-  ...dolphinSeries,
-]
 
 // 所有烹饪
 export const cooking: RewardItem[] = [
@@ -1038,6 +1343,52 @@ export const cooking: RewardItem[] = [
   ...hotdogSeries,
   ...steakSeries,
   ...saladSeries,
+  ...eggTartSeries,
+  ...tofuSeries,
+  ...teawareSeries,
+]
+
+// 所有植物
+export const plants: RewardItem[] = [
+  ...cornSeries,
+  ...sunflowerSeries,
+  ...strawberrySeries,
+  ...roseSeries,
+  ...watermelonSeries,
+  ...carrotSeries,
+  ...tomatoSeries,
+  ...cherrySeries,
+  ...appleSeries,
+  ...teaLeafSeries,
+  ...bambooSeries,
+  ...coconutSeries,
+  ...pomegranateSeries,
+  ...flowerSeries,
+  ...succulentSeries,
+  ...cactusSeries,
+]
+
+// 所有动物
+export const animals: RewardItem[] = [
+  ...chickenSeries,
+  ...cowSeries,
+  ...beeSeries,
+  ...rabbitSeries,
+  ...pigSeries,
+  ...sheepSeries,
+  ...duckSeries,
+  ...fishSeries,
+  ...monkeySeries,
+  ...penguinSeries,
+  ...owlSeries,
+  ...dolphinSeries,
+  ...hamsterSeries,
+  ...parrotSeries,
+  ...foxSeries,
+  ...dogSeries,
+  ...catSeries,
+  ...butterflySeries,
+  ...gliderSeries,
 ]
 
 // 所有奖励项目
@@ -1045,9 +1396,9 @@ export const allRewardItems: RewardItem[] = [...plants, ...animals, ...cooking]
 
 // 按系列分组
 export const seriesGroups = {
-  plant: ['玉米', '向日葵', '草莓', '玫瑰', '西瓜', '胡萝卜', '番茄', '樱桃', '苹果', '茶叶', '竹子', '椰子', '石榴'],
-  animal: ['小鸡', '奶牛', '蜜蜂', '兔子', '小猪', '绵羊', '鸭子', '鱼', '猴子', '企鹅', '猫头鹰', '海豚'],
-  cooking: ['面包', '蛋糕', '拉面', '寿司', '披萨', '咖啡', '茶', '冰淇淋', '汉堡', '饼干', '棒棒糖', '面条', '热狗', '牛排', '沙拉'],
+  plant: ['玉米', '向日葵', '草莓', '玫瑰', '西瓜', '胡萝卜', '番茄', '樱桃', '苹果', '茶叶', '竹子', '椰子', '石榴', '花', '多肉', '仙人掌'],
+  animal: ['小鸡', '奶牛', '蜜蜂', '兔子', '小猪', '绵羊', '鸭子', '鱼', '猴子', '企鹅', '猫头鹰', '海豚', '仓鼠', '鹦鹉', '狐狸', '狗', '猫', '蝴蝶', '蜜袋鼯'],
+  cooking: ['面包', '蛋糕', '拉面', '寿司', '披萨', '咖啡', '茶', '冰淇淋', '汉堡', '饼干', '棒棒糖', '面条', '热狗', '牛排', '沙拉', '蛋挞', '豆腐', '茶具'],
 }
 
 // 根据分类获取奖励项目
