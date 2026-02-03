@@ -1,10 +1,26 @@
-import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+// import axios from 'axios'; // 注释掉未使用的导入
+
+// 定义类型别名避免冲突
+type MockAxiosRequestConfig = {
+  url?: string;
+  method?: string;
+  data?: any;
+  headers?: any;
+};
+
+// type MockAxiosResponse = {  // 注释掉未使用的类型
+//   data: any;
+//   status?: number;
+//   statusText?: string;
+//   headers?: any;
+//   config?: MockAxiosRequestConfig;
+// };
 
 // 模拟后端API服务
 // 由于这是一个前端项目，我们创建一个兼容axios的模拟API来替代真实后端
 
 // 在浏览器环境中模拟数据存储
-const mockDB = {
+const mockDB: any = {
   users: [],
   habits: {},
   checkins: {},
@@ -25,7 +41,7 @@ if (!localStorage.getItem('mock_users')) {
   mockDB.users = [defaultUser];
   localStorage.setItem('mock_users', JSON.stringify(mockDB.users));
 } else {
-  mockDB.users = JSON.parse(localStorage.getItem('mock_users'));
+  mockDB.users = JSON.parse(localStorage.getItem('mock_users') || '[]');
 }
 
 // 工具函数
@@ -105,7 +121,7 @@ export const mockAPI = {
     };
   },
 
-  getUserProfile: async (token: string) => {
+  getUserProfile: async (_token: string) => {
     await delay(300); // 模拟网络延迟
     
     // 这里简单地从token中解析用户名（实际应用中应验证JWT）
@@ -384,8 +400,8 @@ export const mockAPI = {
 };
 
 // 创建一个兼容axios的模拟API客户端
-export const createMockAPIAdapter = (): AxiosInstance => {
-  const adapter: AxiosInstance = {
+export const createMockAPIAdapter = () => {
+  const adapter: any = {
     // 拦截器
     interceptors: {
       request: {
@@ -401,7 +417,7 @@ export const createMockAPIAdapter = (): AxiosInstance => {
     },
     
     // GET请求
-    get: async (url: string, config?: AxiosRequestConfig): Promise<AxiosResponse> => {
+    get: async (url: string, _config?: MockAxiosRequestConfig) => {
       const token = localStorage.getItem('access_token');
       if (!token) {
         return Promise.reject({ response: { status: 401, data: { message: '未授权访问' } } });
@@ -457,7 +473,7 @@ export const createMockAPIAdapter = (): AxiosInstance => {
     },
     
     // POST请求
-    post: async (url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse> => {
+    post: async (url: string, data?: any, _config?: MockAxiosRequestConfig) => {
       try {
         switch(url) {
           case '/auth/login':
@@ -504,7 +520,7 @@ export const createMockAPIAdapter = (): AxiosInstance => {
     },
     
     // PUT请求
-    put: async (url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse> => {
+    put: async (url: string, data?: any, _config?: MockAxiosRequestConfig) => {
       const urlParts = url.split('/');
       const habitId = urlParts[urlParts.length - 1];
       const userStr = localStorage.getItem('user');
@@ -522,7 +538,7 @@ export const createMockAPIAdapter = (): AxiosInstance => {
     },
     
     // DELETE请求
-    delete: async (url: string, config?: AxiosRequestConfig): Promise<AxiosResponse> => {
+    delete: async (url: string, _config?: MockAxiosRequestConfig) => {
       const urlParts = url.split('/');
       const id = urlParts[urlParts.length - 1];
       
@@ -552,7 +568,7 @@ export const createMockAPIAdapter = (): AxiosInstance => {
     },
     
     // PATCH请求
-    patch: async (url: string, data?: any, config?: AxiosRequestConfig): Promise<AxiosResponse> => {
+    patch: async (url: string, _data?: any, _config?: MockAxiosRequestConfig) => {
       if (url.includes('/reports/') && url.endsWith('/read')) {
         const parts = url.split('/');
         const reportId = parts[parts.length - 2];
@@ -572,7 +588,7 @@ export const createMockAPIAdapter = (): AxiosInstance => {
     },
     
     // 其他必需的axios方法
-    request: async (config: AxiosRequestConfig) => {
+    request: async (config: MockAxiosRequestConfig) => {
       switch(config.method?.toLowerCase()) {
         case 'get':
           return adapter.get!(config.url!, config);
@@ -589,12 +605,12 @@ export const createMockAPIAdapter = (): AxiosInstance => {
       }
     },
     
-    getUri: (config?: AxiosRequestConfig) => '',
-    head: async (url: string, config?: AxiosRequestConfig) => ({ data: {} }),
-    options: async (url: string, config?: AxiosRequestConfig) => ({ data: {} }),
-    postForm: async (url: string, data?: any, config?: AxiosRequestConfig) => ({ data: {} }),
-    putForm: async (url: string, data?: any, config?: AxiosRequestConfig) => ({ data: {} }),
-    patchForm: async (url: string, data?: any, config?: AxiosRequestConfig) => ({ data: {} }),
+    getUri: (_config?: MockAxiosRequestConfig) => '',
+    head: async (_url: string, _config?: MockAxiosRequestConfig) => ({ data: {} }),
+    options: async (_url: string, _config?: MockAxiosRequestConfig) => ({ data: {} }),
+    postForm: async (_url: string, _data?: any, _config?: MockAxiosRequestConfig) => ({ data: {} }),
+    putForm: async (_url: string, _data?: any, _config?: MockAxiosRequestConfig) => ({ data: {} }),
+    patchForm: async (_url: string, _data?: any, _config?: MockAxiosRequestConfig) => ({ data: {} }),
     
     defaults: {
       headers: {

@@ -86,7 +86,7 @@ export function BadgeModal({ isOpen, onClose }: BadgeModalProps) {
                                   className={cn(
                                     'relative p-2 rounded-xl border-2 text-center transition-all',
                                     badge.unlocked 
-                                      ? cn(rarityBgColors[badge.rarity], rarityBorderColors[badge.rarity])
+                                      ? cn(rarityBgColors[badge.rarity as keyof typeof rarityBgColors], rarityBorderColors[badge.rarity as keyof typeof rarityBorderColors])
                                       : 'bg-muted/50 border-muted-foreground/20'
                                   )}
                                 >
@@ -98,7 +98,7 @@ export function BadgeModal({ isOpen, onClose }: BadgeModalProps) {
                                       >
                                         {badge.emoji}
                                       </motion.div>
-                                      <p className={cn('text-xs font-bold truncate', rarityColors[badge.rarity])}>
+                                      <p className={cn('text-xs font-bold truncate', rarityColors[badge.rarity as keyof typeof rarityColors])}>
                                         {badge.name}
                                       </p>
                                       
@@ -122,7 +122,7 @@ export function BadgeModal({ isOpen, onClose }: BadgeModalProps) {
                                       </div>
                                       <p className="text-xs text-muted-foreground font-medium">???</p>
                                       <p className="text-xs text-muted-foreground/50">
-                                        {rarityLabels[badge.rarity]}
+                                        {rarityLabels[badge.rarity as keyof typeof rarityLabels]}
                                       </p>
                                     </>
                                   )}

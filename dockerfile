@@ -8,6 +8,9 @@ COPY index.html ./
 COPY public ./public
 COPY src ./src
 RUN npm ci
+# 在构建时指定API基础URL环境变量
+ARG VITE_API_BASE_URL=http://localhost:3001/api
+ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 RUN npm run build
 
 FROM node:18-alpine AS runner

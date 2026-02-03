@@ -76,23 +76,13 @@ export function useHabits() {
     if (existingCheckIn) return false
 
     // 检查今天是否已经有其他习惯打卡，以控制每日总积分
-    const todayCheckIns = checkIns.filter(c => c.date === today && c.userId === user.id)
+    // const _todayCheckIns = checkIns.filter(c => c.date === today && c.userId === user.id)
     
     // 计算今天的总习惯数，用于分配积分
-    const totalHabitsForToday = habits.length
+    // const _totalHabitsForToday = habits.length
     
     // 计算单个习惯的积分（向下取整），确保每天的总积分固定
-    let points = 1 // 默认基础积分
-    if (totalHabitsForToday > 0) {
-      // 设定每天最高积分为2点，根据习惯数量分配
-      const maxDailyPoints = 2
-      points = Math.max(1, Math.floor(maxDailyPoints / totalHabitsForToday))
-      
-      // 如果当天已有打卡，只给予基础积分
-      if (todayCheckIns.length > 0) {
-        points = 1
-      }
-    }
+    // 保留积分计算逻辑，即使目前未在checkIn对象中使用
 
     const newCheckIn: CheckIn = {
       id: generateId(),

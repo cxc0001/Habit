@@ -1,7 +1,22 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react'
 import { User } from '@/types'
-import { generateId } from '@/lib/utils'
 import { authAPI } from '@/services/api'
+
+interface LoginResponse {
+  user: User;
+  accessToken: string;
+  refreshToken: string;
+}
+
+interface RegisterResponse {
+  user: User;
+  accessToken: string;
+  refreshToken: string;
+}
+
+interface ProfileResponse {
+  user: User;
+}
 
 interface AuthContextType {
   user: User | null
@@ -28,8 +43,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         try {
           // 验证token是否有效
           const response = await authAPI.getUserProfile();
-          if (response.data && response.data.user) {
-            setUser(response.data.user);
+          if (response.data && (response.data as ProfileResponse).user) {
+            setUser((response.data as ProfileResponse).user);
           } else {
             // Token无效，清除本地存储
             localStorage.removeItem('access_token');
@@ -53,19 +68,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const login = async (username: string, password: string): Promise<{ success: boolean; message?: string }> => {
     try {
       const response = await authAPI.login(username, password);
+      const data = response.data as LoginResponse;
       
-      if (response.data && response.data.accessToken && response.data.refreshToken) {
+      if (data && data.accessToken && data.refreshToken) {
         // 存储tokens，refresh token设置30天过期
-        localStorage.setItem('access_token', response.data.accessToken);
+        localStorage.setItem('access_token', data.accessToken);
         
         // 设置refresh token，有效期30天
         const refreshTokenExpiry = new Date();
         refreshTokenExpiry.setDate(refreshTokenExpiry.getDate() + 30);
-        localStorage.setItem('refresh_token', response.data.refreshToken);
+        localStorage.setItem('refresh_token', data.refreshToken);
         
         // 存储用户信息
-        setUser(response.data.user);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+        setUser(data.user);
+        localStorage.setItem('user', JSON.stringify(data.user));
         
         return { success: true };
       }
@@ -86,19 +102,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const register = async (username: string, password: string): Promise<{ success: boolean; message?: string }> => {
     try {
       const response = await authAPI.register(username, password);
+      const data = response.data as RegisterResponse;
       
-      if (response.data && response.data.accessToken && response.data.refreshToken) {
+      if (data && data.accessToken && data.refreshToken) {
         // 存储tokens
-        localStorage.setItem('access_token', response.data.accessToken);
+        localStorage.setItem('access_token', data.accessToken);
         
         // 设置refresh token，有效期30天
         const refreshTokenExpiry = new Date();
         refreshTokenExpiry.setDate(refreshTokenExpiry.getDate() + 30);
-        localStorage.setItem('refresh_token', response.data.refreshToken);
+        localStorage.setItem('refresh_token', data.refreshToken);
         
         // 存储用户信息
-        setUser(response.data.user);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+        setUser(data.user);
+        localStorage.setItem('user', JSON.stringify(data.user));
         
         return { success: true };
       }
@@ -127,9 +144,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const refreshUser = async () => {
     try {
       const response = await authAPI.getUserProfile();
-      if (response.data && response.data.user) {
-        setUser(response.data.user);
-        localStorage.setItem('user', JSON.stringify(response.data.user));
+      const data = response.data as ProfileResponse;
+      if (data && data.user) {
+        setUser(data.user);
+        localStorage.setItem('user', JSON.stringify(data.user));
       }
     } catch (error) {
       console.error('刷新用户信息失败:', error);

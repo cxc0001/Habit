@@ -9,11 +9,18 @@ const apiClient = axios.create({
   },
 });
 
+// 修复类型错误
+declare global {
+  interface ImportMeta {
+    env: Record<string, string>;
+  }
+}
+
 // 请求拦截器 - 添加认证token
 apiClient.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('access_token');
-    if (token) {
+    if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
@@ -54,7 +61,7 @@ export const authAPI = {
   
   // 刷新token
   refreshToken: () => 
-    apiClient.post('/auth/refresh', { refresh_token: localStorage.getItem('refresh_token') }),
+    apiClient.post('/auth/refresh', { refreshToken: localStorage.getItem('refresh_token') }),
   
   // 获取用户信息
   getUserProfile: () => 

@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react'
-import { ActiveProject, UserInventory, Badge, CelebrationData } from '@/types'
+import { ActiveProject, Inventory as UserInventory, Badge, CelebrationData } from '@/types'
 import { useAuth } from '@/context/AuthContext'
 import { allRewardItems, getRewardById, getRewardsBySeries, seriesGroups, RewardCategory } from '@/data/rewards'
 import { generateId } from '@/lib/utils'
@@ -46,7 +46,7 @@ export function useFarm() {
     const project: ActiveProject = {
       id: generateId(),
       rewardItemId: firstItem.id,
-      seriesName,
+      seriesName: seriesName,
       userId: user.id,
       startedAt: new Date().toISOString(),
       currentCheckIns: 0,
@@ -83,7 +83,9 @@ export function useFarm() {
         id: generateId(),
         name: harvest.name,
         emoji: harvest.emoji,
-        rarity: harvest.rarity,
+        rarity: harvest.rarity || 'common',
+        unlocked: true,
+        checkInsRequired: item.checkInsRequired,
         series: activeProject.seriesName,
         unlockedAt: new Date().toISOString(),
       }
@@ -118,6 +120,7 @@ export function useFarm() {
         setActiveProject(updatedProject)
 
         celebrationData = {
+          type: 'badge',
           badge,
           isSeriesComplete: false,
           seriesName: activeProject.seriesName,
@@ -127,7 +130,7 @@ export function useFarm() {
         const allProjects = JSON.parse(localStorage.getItem(PROJECTS_KEY) || '[]') as ActiveProject[]
         const projectIndex = allProjects.findIndex((p) => p.id === activeProject.id)
         if (projectIndex !== -1) {
-          allProjects[projectIndex] = { ...activeProject, isCompleted: true, harvest: harvest }
+          allProjects[projectIndex] = { ...activeProject, isCompleted: true }
           localStorage.setItem(PROJECTS_KEY, JSON.stringify(allProjects))
         }
         setActiveProject(null)
@@ -135,6 +138,7 @@ export function useFarm() {
         newCompletedSeries = [...newCompletedSeries, activeProject.seriesName]
 
         celebrationData = {
+          type: 'badge',
           badge,
           isSeriesComplete: true,
           seriesName: activeProject.seriesName,
@@ -183,11 +187,11 @@ export function useFarm() {
     const seriesItems = getRewardsBySeries(seriesName)
     return seriesItems.map(item => {
       const harvest = item.possibleHarvests[0]
-      const owned = inventory.badges.find(b => b.name === harvest.name)
+      const owned = inventory.badges.find((b: Badge) => b.name === harvest.name)
       return {
         name: harvest.name,
         emoji: harvest.emoji,
-        rarity: harvest.rarity,
+        rarity: harvest.rarity || 'common',
         unlocked: !!owned,
         checkInsRequired: item.checkInsRequired,
       }
