@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: dockerfile.dockerfile
+      target: runner
+    image: habit-app:latest
+    ports:
+      - "3000:3000"
+    env_file:
+      - server/.env
+    restart: unless-stopped
