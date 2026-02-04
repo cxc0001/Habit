@@ -1,5 +1,10 @@
 import { motion } from 'framer-motion'
-import { DailyStats } from '@/types'
+
+// 定义DailyStats类型
+export interface DailyStats {
+  date: string;
+  checkIns: number;
+}
 
 interface BarChartProps {
   data: DailyStats[]
@@ -47,7 +52,7 @@ export function BarChart({ data, height = 120 }: BarChartProps) {
           if (item.date) {
             if (item.date.match(/^\d{4}-\d{2}$/)) {
               // 月份格式 YYYY-MM
-              const [year, month] = item.date.split('-')
+              const [, month] = item.date.split('-') // 使用逗号跳过第一个元素（年份）
               displayLabel = `${month}月`
             } else {
               // 日期格式 YYYY-MM-DD

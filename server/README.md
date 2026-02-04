@@ -66,7 +66,7 @@ npm start
 
 ## 环境变量
 
-- `PORT`: 服务器监听端口 (默认: 3001)
+- `PORT`: 服务器监听端口 (默认: 12002)
 - `JWT_SECRET`: JWT 访问令牌密钥
 - `REFRESH_SECRET`: JWT 刷新令牌密钥
 

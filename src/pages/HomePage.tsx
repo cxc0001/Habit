@@ -120,8 +120,8 @@ export function HomePage() {
               <div className="relative">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-2">
-                    <span className={cn('text-sm font-bold', categoryInfo[currentItem.category].color)}>
-                      {categoryInfo[currentItem.category].emoji} {activeProject.seriesName}系列
+                    <span className={cn('text-sm font-bold', (categoryInfo as any)[currentItem.category]?.color || 'text-primary')}>
+                      {(categoryInfo as any)[currentItem.category]?.emoji || '🌱'} {activeProject.seriesName}系列
                     </span>
                     <span className="text-xs text-muted-foreground">
                       {activeProject.currentCheckIns}/{activeProject.requiredCheckIns}
@@ -191,7 +191,7 @@ export function HomePage() {
                 <div className="mt-3 pt-3 border-t border-dashed border-border">
                   <p className="text-xs text-muted-foreground mb-1.5">系列徽章:</p>
                   <div className="flex gap-1.5 flex-wrap">
-                    {getRewardsBySeries(activeProject.seriesName).map((item, i) => {
+                    {getRewardsBySeries(activeProject.seriesName).map((item: any, i: number) => {
                       const isUnlocked = inventory.badges.some(b => b.name === item.possibleHarvests[0].name)
                       const isCurrent = item.id === activeProject.rewardItemId
                       return (
@@ -265,7 +265,7 @@ export function HomePage() {
                                 : 'bg-muted text-muted-foreground hover:bg-muted/80'
                             )}
                           >
-                            {categoryInfo[cat].emoji} {categoryInfo[cat].label}
+                            {(categoryInfo as any)[cat].emoji} {(categoryInfo as any)[cat].label}
                           </button>
                         ))}
                       </div>

@@ -24,7 +24,7 @@ export function ToastContainer() {
     <div className="fixed top-4 right-4 z-50 flex flex-col gap-3">
       <AnimatePresence>
         {toasts.map((toast) => {
-          const Icon = icons[toast.type]
+          const Icon = icons[toast.type as keyof typeof icons]
           return (
             <motion.div
               key={toast.id}
@@ -34,7 +34,7 @@ export function ToastContainer() {
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
               className={cn(
                 'flex items-center gap-3 px-4 py-3 rounded-2xl border-2 shadow-cute backdrop-blur-xl min-w-[280px]',
-                styles[toast.type]
+                styles[toast.type as keyof typeof styles]
               )}
             >
               <motion.div

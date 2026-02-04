@@ -2,18 +2,25 @@ import axios from 'axios';
 
 // 创建axios实例
 const apiClient = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api', // 默认后端地址
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:12002/api', // 默认后端地址
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
 });
 
+// 修复类型错误
+declare global {
+  interface ImportMeta {
+    env: Record<string, string>;
+  }
+}
+
 // 请求拦截器 - 添加认证token
 apiClient.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('access_token');
-    if (token) {
+    if (token && config.headers) {
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
@@ -54,7 +61,7 @@ export const authAPI = {
   
   // 刷新token
   refreshToken: () => 
-    apiClient.post('/auth/refresh', { refresh_token: localStorage.getItem('refresh_token') }),
+    apiClient.post('/auth/refresh', { refreshToken: localStorage.getItem('refresh_token') }),
   
   // 获取用户信息
   getUserProfile: () => 

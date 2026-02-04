@@ -100,11 +100,12 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                   </motion.h2>
 
                   {/* 徽章展示 */}
+                  {badge && (
                   <motion.div
                     className={cn(
                       'w-20 h-20 md:w-24 md:h-24 mx-auto rounded-2xl md:rounded-3xl flex items-center justify-center border-4',
-                      rarityBgColors[badge.rarity],
-                      rarityBorderColors[badge.rarity]
+                      badge.rarity && rarityBgColors[badge.rarity as keyof typeof rarityBgColors],
+                      badge.rarity && rarityBorderColors[badge.rarity as keyof typeof rarityBorderColors]
                     )}
                     initial={{ scale: 0, rotate: -180 }}
                     animate={{ scale: 1, rotate: 0 }}
@@ -118,12 +119,14 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                       {badge.emoji}
                     </motion.span>
                   </motion.div>
+                  )}
 
                   {/* 徽章名称 */}
+                  {badge && (
                   <motion.p
                     className={cn(
                       'text-lg md:text-xl font-bold',
-                      isSeriesComplete ? 'text-white' : rarityColors[badge.rarity]
+                      isSeriesComplete ? 'text-white' : badge.rarity && rarityColors[badge.rarity as keyof typeof rarityColors]
                     )}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -131,20 +134,23 @@ export function CelebrationModal({ data, onClose }: CelebrationModalProps) {
                   >
                     {badge.name}
                   </motion.p>
+                  )}
 
                   {/* 稀有度标签 */}
+                  {badge && (
                   <motion.span
                     className={cn(
                       'inline-block px-2.5 md:px-3 py-0.5 md:py-1 rounded-full text-xs md:text-sm font-bold',
-                      badge.rarity === 'legendary' ? 'bg-white/30 text-white' : rarityBgColors[badge.rarity],
-                      badge.rarity !== 'legendary' && rarityColors[badge.rarity]
+                      (badge.rarity === 'legendary' ? 'bg-white/30 text-white' : badge.rarity && rarityBgColors[badge.rarity as keyof typeof rarityBgColors]),
+                      (badge.rarity as keyof typeof rarityColors) !== 'legendary' && badge.rarity && rarityColors[badge.rarity as keyof typeof rarityColors]
                     )}
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
                     transition={{ type: 'spring', delay: 0.6 }}
                   >
-                    {rarityLabels[badge.rarity]}
+                    {badge.rarity && rarityLabels[badge.rarity as keyof typeof rarityLabels]}
                   </motion.span>
+                  )}
 
                   {/* 系列信息 */}
                   <motion.p

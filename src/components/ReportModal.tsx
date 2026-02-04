@@ -4,7 +4,6 @@ import { X, BarChart3, Calendar, TrendingUp, Award, Leaf, Flame } from 'lucide-r
 import { useReports } from '@/hooks/useReports'
 import { useHabits } from '@/hooks/useHabits'
 import { BarChart } from '@/components/Charts'
-import { DailyStats } from '@/types'
 import { format } from 'date-fns'
 import { zhCN } from 'date-fns/locale'
 import { cn } from '@/lib/utils'

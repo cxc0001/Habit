@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: dockerfile
+      target: runner
+    image: habit-backend-dev:latest
+    container_name: habit-backend-dev
+    ports:
+      - "12002:12002"
+    environment:
+      - NODE_ENV=development
+      - PORT=12002
+    volumes:
+      - ./server:/app/server
+      - ./data:/app/server/data
+    restart: unless-stopped
+    command: ["npx", "nodemon", "server.js"]
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    image: habit-frontend-dev:latest
+    container_name: habit-frontend-dev
+    ports:
+      - "12001:12001"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    volumes:
+      - ./src:/usr/src/app/src
+      - ./public:/usr/src/app/public
+      - ./vite.config.ts:/usr/src/app/vite.config.ts
