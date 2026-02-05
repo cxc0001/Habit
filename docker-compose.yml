@@ -5,7 +5,6 @@ services:
     build:
       context: .
       dockerfile: dockerfile
-      target: runner
     image: habit-backend:latest
     container_name: habit-backend
     ports:

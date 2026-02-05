@@ -18,11 +18,11 @@ fi
 
 # 构建并启动服务
 echo "🏗️ Building and starting services..."
-$COMPOSE_CMD -f docker-compose.prod.yml up --build -d
+$COMPOSE_CMD -f docker-compose.yml up --build -d
 
 echo "✅ Services are starting..."
 echo "📱 Frontend will be available at: http://localhost:12001"
 echo "🔌 Backend API will be available at: http://localhost:12002"
 echo ""
-echo "📋 To view logs: $COMPOSE_CMD -f docker-compose.prod.yml logs -f"
-echo "🛑 To stop services: $COMPOSE_CMD -f docker-compose.prod.yml down"
+echo "📋 To view logs: $COMPOSE_CMD -f docker-compose.yml logs -f"
+echo "🛑 To stop services: $COMPOSE_CMD -f docker-compose.yml down"
