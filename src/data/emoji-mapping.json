@@ -1,0 +1,1127 @@
+{
+  "🌽": {
+    "original": "🌽",
+    "codePoint": "U+1F33D",
+    "iconName": "emoji_0",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F33D.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F33D/512.gif",
+    "localSvg": "/emojis/emoji_1F33D.svg",
+    "localPng": "/emojis/emoji_1F33D.png"
+  },
+  "🌾": {
+    "original": "🌾",
+    "codePoint": "U+1F33E",
+    "iconName": "emoji_1",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F33E.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F33E/512.gif",
+    "localSvg": "/emojis/emoji_1F33E.svg",
+    "localPng": "/emojis/emoji_1F33E.png"
+  },
+  "🌈": {
+    "original": "🌈",
+    "codePoint": "U+1F308",
+    "iconName": "emoji_2",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F308.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F308/512.gif",
+    "localSvg": "/emojis/emoji_1F308.svg",
+    "localPng": "/emojis/emoji_1F308.png"
+  },
+  "🍲": {
+    "original": "🍲",
+    "codePoint": "U+1F372",
+    "iconName": "emoji_3",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F372.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F372/512.gif",
+    "localSvg": "/emojis/emoji_1F372.svg",
+    "localPng": "/emojis/emoji_1F372.png"
+  },
+  "🌻": {
+    "original": "🌻",
+    "codePoint": "U+1F33B",
+    "iconName": "emoji_4",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F33B.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F33B/512.gif",
+    "localSvg": "/emojis/emoji_1F33B.svg",
+    "localPng": "/emojis/emoji_1F33B.png"
+  },
+  "🌰": {
+    "original": "🌰",
+    "codePoint": "U+1F330",
+    "iconName": "emoji_5",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F330.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F330/512.gif",
+    "localSvg": "/emojis/emoji_1F330.svg",
+    "localPng": "/emojis/emoji_1F330.png"
+  },
+  "🌱": {
+    "original": "🌱",
+    "codePoint": "U+1F331",
+    "iconName": "emoji_6",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F331.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F331/512.gif",
+    "localSvg": "/emojis/emoji_1F331.svg",
+    "localPng": "/emojis/emoji_1F331.png"
+  },
+  "🌿": {
+    "original": "🌿",
+    "codePoint": "U+1F33F",
+    "iconName": "emoji_7",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F33F.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F33F/512.gif",
+    "localSvg": "/emojis/emoji_1F33F.svg",
+    "localPng": "/emojis/emoji_1F33F.png"
+  },
+  "🌞": {
+    "original": "🌞",
+    "codePoint": "U+1F31E",
+    "iconName": "emoji_8",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F31E.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F31E/512.gif",
+    "localSvg": "/emojis/emoji_1F31E.svg",
+    "localPng": "/emojis/emoji_1F31E.png"
+  },
+  "🍓": {
+    "original": "🍓",
+    "codePoint": "U+1F353",
+    "iconName": "emoji_9",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F353.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F353/512.gif",
+    "localSvg": "/emojis/emoji_1F353.svg",
+    "localPng": "/emojis/emoji_1F353.png"
+  },
+  "🌸": {
+    "original": "🌸",
+    "codePoint": "U+1F338",
+    "iconName": "emoji_10",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F338.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F338/512.gif",
+    "localSvg": "/emojis/emoji_1F338.svg",
+    "localPng": "/emojis/emoji_1F338.png"
+  },
+  "💐": {
+    "original": "💐",
+    "codePoint": "U+1F490",
+    "iconName": "emoji_11",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F490.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F490/512.gif",
+    "localSvg": "/emojis/emoji_1F490.svg",
+    "localPng": "/emojis/emoji_1F490.png"
+  },
+  "🌹": {
+    "original": "🌹",
+    "codePoint": "U+1F339",
+    "iconName": "emoji_12",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F339.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F339/512.gif",
+    "localSvg": "/emojis/emoji_1F339.svg",
+    "localPng": "/emojis/emoji_1F339.png"
+  },
+  "🍈": {
+    "original": "🍈",
+    "codePoint": "U+1F348",
+    "iconName": "emoji_13",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F348.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F348/512.gif",
+    "localSvg": "/emojis/emoji_1F348.svg",
+    "localPng": "/emojis/emoji_1F348.png"
+  },
+  "🍉": {
+    "original": "🍉",
+    "codePoint": "U+1F349",
+    "iconName": "emoji_14",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F349.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F349/512.gif",
+    "localSvg": "/emojis/emoji_1F349.svg",
+    "localPng": "/emojis/emoji_1F349.png"
+  },
+  "🥕": {
+    "original": "🥕",
+    "codePoint": "U+1F955",
+    "iconName": "emoji_15",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F955.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F955/512.gif",
+    "localSvg": "/emojis/emoji_1F955.svg",
+    "localPng": "/emojis/emoji_1F955.png"
+  },
+  "🍅": {
+    "original": "🍅",
+    "codePoint": "U+1F345",
+    "iconName": "emoji_16",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F345.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F345/512.gif",
+    "localSvg": "/emojis/emoji_1F345.svg",
+    "localPng": "/emojis/emoji_1F345.png"
+  },
+  "🍒": {
+    "original": "🍒",
+    "codePoint": "U+1F352",
+    "iconName": "emoji_17",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F352.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F352/512.gif",
+    "localSvg": "/emojis/emoji_1F352.svg",
+    "localPng": "/emojis/emoji_1F352.png"
+  },
+  "🍏": {
+    "original": "🍏",
+    "codePoint": "U+1F34F",
+    "iconName": "emoji_18",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F34F.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F34F/512.gif",
+    "localSvg": "/emojis/emoji_1F34F.svg",
+    "localPng": "/emojis/emoji_1F34F.png"
+  },
+  "🍎": {
+    "original": "🍎",
+    "codePoint": "U+1F34E",
+    "iconName": "emoji_19",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F34E.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F34E/512.gif",
+    "localSvg": "/emojis/emoji_1F34E.svg",
+    "localPng": "/emojis/emoji_1F34E.png"
+  },
+  "🥚": {
+    "original": "🥚",
+    "codePoint": "U+1F95A",
+    "iconName": "emoji_20",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F95A.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F95A/512.gif",
+    "localSvg": "/emojis/emoji_1F95A.svg",
+    "localPng": "/emojis/emoji_1F95A.png"
+  },
+  "🐤": {
+    "original": "🐤",
+    "codePoint": "U+1F424",
+    "iconName": "emoji_21",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F424.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F424/512.gif",
+    "localSvg": "/emojis/emoji_1F424.svg",
+    "localPng": "/emojis/emoji_1F424.png"
+  },
+  "🐔": {
+    "original": "🐔",
+    "codePoint": "U+1F414",
+    "iconName": "emoji_22",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F414.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F414/512.gif",
+    "localSvg": "/emojis/emoji_1F414.svg",
+    "localPng": "/emojis/emoji_1F414.png"
+  },
+  "🏠": {
+    "original": "🏠",
+    "codePoint": "U+1F3E0",
+    "iconName": "emoji_23",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3E0.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3E0/512.gif",
+    "localSvg": "/emojis/emoji_1F3E0.svg",
+    "localPng": "/emojis/emoji_1F3E0.png"
+  },
+  "🐄": {
+    "original": "🐄",
+    "codePoint": "U+1F404",
+    "iconName": "emoji_24",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F404.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F404/512.gif",
+    "localSvg": "/emojis/emoji_1F404.svg",
+    "localPng": "/emojis/emoji_1F404.png"
+  },
+  "🥛": {
+    "original": "🥛",
+    "codePoint": "U+1F95B",
+    "iconName": "emoji_25",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F95B.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F95B/512.gif",
+    "localSvg": "/emojis/emoji_1F95B.svg",
+    "localPng": "/emojis/emoji_1F95B.png"
+  },
+  "🪲": {
+    "original": "🪲",
+    "codePoint": "U+1FAB2",
+    "iconName": "emoji_26",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1FAB2.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1FAB2/512.gif",
+    "localSvg": "/emojis/emoji_1FAB2.svg",
+    "localPng": "/emojis/emoji_1FAB2.png"
+  },
+  "🐝": {
+    "original": "🐝",
+    "codePoint": "U+1F41D",
+    "iconName": "emoji_27",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F41D.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F41D/512.gif",
+    "localSvg": "/emojis/emoji_1F41D.svg",
+    "localPng": "/emojis/emoji_1F41D.png"
+  },
+  "👑": {
+    "original": "👑",
+    "codePoint": "U+1F451",
+    "iconName": "emoji_28",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F451.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F451/512.gif",
+    "localSvg": "/emojis/emoji_1F451.svg",
+    "localPng": "/emojis/emoji_1F451.png"
+  },
+  "🍯": {
+    "original": "🍯",
+    "codePoint": "U+1F36F",
+    "iconName": "emoji_29",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F36F.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F36F/512.gif",
+    "localSvg": "/emojis/emoji_1F36F.svg",
+    "localPng": "/emojis/emoji_1F36F.png"
+  },
+  "🐰": {
+    "original": "🐰",
+    "codePoint": "U+1F430",
+    "iconName": "emoji_30",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F430.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F430/512.gif",
+    "localSvg": "/emojis/emoji_1F430.svg",
+    "localPng": "/emojis/emoji_1F430.png"
+  },
+  "🐷": {
+    "original": "🐷",
+    "codePoint": "U+1F437",
+    "iconName": "emoji_31",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F437.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F437/512.gif",
+    "localSvg": "/emojis/emoji_1F437.svg",
+    "localPng": "/emojis/emoji_1F437.png"
+  },
+  "🐖": {
+    "original": "🐖",
+    "codePoint": "U+1F416",
+    "iconName": "emoji_32",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F416.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F416/512.gif",
+    "localSvg": "/emojis/emoji_1F416.svg",
+    "localPng": "/emojis/emoji_1F416.png"
+  },
+  "🐑": {
+    "original": "🐑",
+    "codePoint": "U+1F411",
+    "iconName": "emoji_33",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F411.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F411/512.gif",
+    "localSvg": "/emojis/emoji_1F411.svg",
+    "localPng": "/emojis/emoji_1F411.png"
+  },
+  "🐏": {
+    "original": "🐏",
+    "codePoint": "U+1F40F",
+    "iconName": "emoji_34",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F40F.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F40F/512.gif",
+    "localSvg": "/emojis/emoji_1F40F.svg",
+    "localPng": "/emojis/emoji_1F40F.png"
+  },
+  "🦆": {
+    "original": "🦆",
+    "codePoint": "U+1F986",
+    "iconName": "emoji_35",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F986.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F986/512.gif",
+    "localSvg": "/emojis/emoji_1F986.svg",
+    "localPng": "/emojis/emoji_1F986.png"
+  },
+  "🏊": {
+    "original": "🏊",
+    "codePoint": "U+1F3CA",
+    "iconName": "emoji_36",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3CA.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3CA/512.gif",
+    "localSvg": "/emojis/emoji_1F3CA.svg",
+    "localPng": "/emojis/emoji_1F3CA.png"
+  },
+  "🌊": {
+    "original": "🌊",
+    "codePoint": "U+1F30A",
+    "iconName": "emoji_37",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F30A.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F30A/512.gif",
+    "localSvg": "/emojis/emoji_1F30A.svg",
+    "localPng": "/emojis/emoji_1F30A.png"
+  },
+  "🐠": {
+    "original": "🐠",
+    "codePoint": "U+1F420",
+    "iconName": "emoji_38",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F420.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F420/512.gif",
+    "localSvg": "/emojis/emoji_1F420.svg",
+    "localPng": "/emojis/emoji_1F420.png"
+  },
+  "🐟": {
+    "original": "🐟",
+    "codePoint": "U+1F41F",
+    "iconName": "emoji_39",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F41F.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F41F/512.gif",
+    "localSvg": "/emojis/emoji_1F41F.svg",
+    "localPng": "/emojis/emoji_1F41F.png"
+  },
+  "🐡": {
+    "original": "🐡",
+    "codePoint": "U+1F421",
+    "iconName": "emoji_40",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F421.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F421/512.gif",
+    "localSvg": "/emojis/emoji_1F421.svg",
+    "localPng": "/emojis/emoji_1F421.png"
+  },
+  "🏛️": {
+    "original": "🏛️",
+    "codePoint": "U+1F3DB",
+    "iconName": "emoji_41",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3DB.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3DB/512.gif",
+    "localSvg": "/emojis/emoji_1F3DB.svg",
+    "localPng": "/emojis/emoji_1F3DB.png"
+  },
+  " sack": {
+    "original": " sack",
+    "codePoint": "U+20",
+    "iconName": "sack",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/20.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/20/512.gif",
+    "localSvg": "/emojis/emoji_20.svg",
+    "localPng": "/emojis/emoji_20.png"
+  },
+  "🥯": {
+    "original": "🥯",
+    "codePoint": "U+1F96F",
+    "iconName": "emoji_43",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F96F.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F96F/512.gif",
+    "localSvg": "/emojis/emoji_1F96F.svg",
+    "localPng": "/emojis/emoji_1F96F.png"
+  },
+  "🍞": {
+    "original": "🍞",
+    "codePoint": "U+1F35E",
+    "iconName": "emoji_44",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F35E.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F35E/512.gif",
+    "localSvg": "/emojis/emoji_1F35E.svg",
+    "localPng": "/emojis/emoji_1F35E.png"
+  },
+  "🏪": {
+    "original": "🏪",
+    "codePoint": "U+1F3EA",
+    "iconName": "emoji_45",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3EA.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3EA/512.gif",
+    "localSvg": "/emojis/emoji_1F3EA.svg",
+    "localPng": "/emojis/emoji_1F3EA.png"
+  },
+  "🎂": {
+    "original": "🎂",
+    "codePoint": "U+1F382",
+    "iconName": "emoji_46",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F382.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F382/512.gif",
+    "localSvg": "/emojis/emoji_1F382.svg",
+    "localPng": "/emojis/emoji_1F382.png"
+  },
+  "🍫": {
+    "original": "🍫",
+    "codePoint": "U+1F36B",
+    "iconName": "emoji_47",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F36B.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F36B/512.gif",
+    "localSvg": "/emojis/emoji_1F36B.svg",
+    "localPng": "/emojis/emoji_1F36B.png"
+  },
+  "🍜": {
+    "original": "🍜",
+    "codePoint": "U+1F35C",
+    "iconName": "emoji_48",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F35C.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F35C/512.gif",
+    "localSvg": "/emojis/emoji_1F35C.svg",
+    "localPng": "/emojis/emoji_1F35C.png"
+  },
+  "🍖": {
+    "original": "🍖",
+    "codePoint": "U+1F356",
+    "iconName": "emoji_49",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F356.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F356/512.gif",
+    "localSvg": "/emojis/emoji_1F356.svg",
+    "localPng": "/emojis/emoji_1F356.png"
+  },
+  "🔥": {
+    "original": "🔥",
+    "codePoint": "U+1F525",
+    "iconName": "emoji_50",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F525.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F525/512.gif",
+    "localSvg": "/emojis/emoji_1F525.svg",
+    "localPng": "/emojis/emoji_1F525.png"
+  },
+  "🏮": {
+    "original": "🏮",
+    "codePoint": "U+1F3EE",
+    "iconName": "emoji_51",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3EE.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3EE/512.gif",
+    "localSvg": "/emojis/emoji_1F3EE.svg",
+    "localPng": "/emojis/emoji_1F3EE.png"
+  },
+  "🍣": {
+    "original": "🍣",
+    "codePoint": "U+1F363",
+    "iconName": "emoji_52",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F363.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F363/512.gif",
+    "localSvg": "/emojis/emoji_1F363.svg",
+    "localPng": "/emojis/emoji_1F363.png"
+  },
+  "🍱": {
+    "original": "🍱",
+    "codePoint": "U+1F371",
+    "iconName": "emoji_53",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F371.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F371/512.gif",
+    "localSvg": "/emojis/emoji_1F371.svg",
+    "localPng": "/emojis/emoji_1F371.png"
+  },
+  "🍕": {
+    "original": "🍕",
+    "codePoint": "U+1F355",
+    "iconName": "emoji_54",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F355.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F355/512.gif",
+    "localSvg": "/emojis/emoji_1F355.svg",
+    "localPng": "/emojis/emoji_1F355.png"
+  },
+  "🍍": {
+    "original": "🍍",
+    "codePoint": "U+1F34D",
+    "iconName": "emoji_55",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F34D.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F34D/512.gif",
+    "localSvg": "/emojis/emoji_1F34D.svg",
+    "localPng": "/emojis/emoji_1F34D.png"
+  },
+  "☕": {
+    "original": "☕",
+    "codePoint": "U+2615",
+    "iconName": "emoji_56",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2615.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/2615/512.gif",
+    "localSvg": "/emojis/emoji_2615.svg",
+    "localPng": "/emojis/emoji_2615.png"
+  },
+  "🏢": {
+    "original": "🏢",
+    "codePoint": "U+1F3E2",
+    "iconName": "emoji_57",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3E2.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3E2/512.gif",
+    "localSvg": "/emojis/emoji_1F3E2.svg",
+    "localPng": "/emojis/emoji_1F3E2.png"
+  },
+  "🍵": {
+    "original": "🍵",
+    "codePoint": "U+1F375",
+    "iconName": "emoji_58",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F375.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F375/512.gif",
+    "localSvg": "/emojis/emoji_1F375.svg",
+    "localPng": "/emojis/emoji_1F375.png"
+  },
+  "🍦": {
+    "original": "🍦",
+    "codePoint": "U+1F366",
+    "iconName": "emoji_59",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F366.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F366/512.gif",
+    "localSvg": "/emojis/emoji_1F366.svg",
+    "localPng": "/emojis/emoji_1F366.png"
+  },
+  "🎨": {
+    "original": "🎨",
+    "codePoint": "U+1F3A8",
+    "iconName": "emoji_60",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3A8.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3A8/512.gif",
+    "localSvg": "/emojis/emoji_1F3A8.svg",
+    "localPng": "/emojis/emoji_1F3A8.png"
+  },
+  "🍪": {
+    "original": "🍪",
+    "codePoint": "U+1F36A",
+    "iconName": "emoji_61",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F36A.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F36A/512.gif",
+    "localSvg": "/emojis/emoji_1F36A.svg",
+    "localPng": "/emojis/emoji_1F36A.png"
+  },
+  "🧁": {
+    "original": "🧁",
+    "codePoint": "U+1F9C1",
+    "iconName": "emoji_62",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F9C1.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F9C1/512.gif",
+    "localSvg": "/emojis/emoji_1F9C1.svg",
+    "localPng": "/emojis/emoji_1F9C1.png"
+  },
+  "🍭": {
+    "original": "🍭",
+    "codePoint": "U+1F36D",
+    "iconName": "emoji_63",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F36D.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F36D/512.gif",
+    "localSvg": "/emojis/emoji_1F36D.svg",
+    "localPng": "/emojis/emoji_1F36D.png"
+  },
+  "🌀": {
+    "original": "🌀",
+    "codePoint": "U+1F300",
+    "iconName": "emoji_64",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F300.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F300/512.gif",
+    "localSvg": "/emojis/emoji_1F300.svg",
+    "localPng": "/emojis/emoji_1F300.png"
+  },
+  "🍝": {
+    "original": "🍝",
+    "codePoint": "U+1F35D",
+    "iconName": "emoji_65",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F35D.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F35D/512.gif",
+    "localSvg": "/emojis/emoji_1F35D.svg",
+    "localPng": "/emojis/emoji_1F35D.png"
+  },
+  "🌭": {
+    "original": "🌭",
+    "codePoint": "U+1F32D",
+    "iconName": "emoji_66",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F32D.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F32D/512.gif",
+    "localSvg": "/emojis/emoji_1F32D.svg",
+    "localPng": "/emojis/emoji_1F32D.png"
+  },
+  "🧀": {
+    "original": "🧀",
+    "codePoint": "U+1F9C0",
+    "iconName": "emoji_67",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F9C0.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F9C0/512.gif",
+    "localSvg": "/emojis/emoji_1F9C0.svg",
+    "localPng": "/emojis/emoji_1F9C0.png"
+  },
+  "🥩": {
+    "original": "🥩",
+    "codePoint": "U+1F969",
+    "iconName": "emoji_68",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F969.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F969/512.gif",
+    "localSvg": "/emojis/emoji_1F969.svg",
+    "localPng": "/emojis/emoji_1F969.png"
+  },
+  "🥗": {
+    "original": "🥗",
+    "codePoint": "U+1F957",
+    "iconName": "emoji_69",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F957.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F957/512.gif",
+    "localSvg": "/emojis/emoji_1F957.svg",
+    "localPng": "/emojis/emoji_1F957.png"
+  },
+  "🥬": {
+    "original": "🥬",
+    "codePoint": "U+1F96C",
+    "iconName": "emoji_70",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F96C.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F96C/512.gif",
+    "localSvg": "/emojis/emoji_1F96C.svg",
+    "localPng": "/emojis/emoji_1F96C.png"
+  },
+  "🥧": {
+    "original": "🥧",
+    "codePoint": "U+1F967",
+    "iconName": "emoji_71",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F967.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F967/512.gif",
+    "localSvg": "/emojis/emoji_1F967.svg",
+    "localPng": "/emojis/emoji_1F967.png"
+  },
+  " PIE": {
+    "original": " PIE",
+    "codePoint": "U+20",
+    "iconName": "PIE",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/20.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/20/512.gif",
+    "localSvg": "/emojis/emoji_20.svg",
+    "localPng": "/emojis/emoji_20.png"
+  },
+  "🍮": {
+    "original": "🍮",
+    "codePoint": "U+1F36E",
+    "iconName": "emoji_73",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F36E.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F36E/512.gif",
+    "localSvg": "/emojis/emoji_1F36E.svg",
+    "localPng": "/emojis/emoji_1F36E.png"
+  },
+  "🍽️": {
+    "original": "🍽️",
+    "codePoint": "U+1F37D",
+    "iconName": "emoji_74",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F37D.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F37D/512.gif",
+    "localSvg": "/emojis/emoji_1F37D.svg",
+    "localPng": "/emojis/emoji_1F37D.png"
+  },
+  "🌶️": {
+    "original": "🌶️",
+    "codePoint": "U+1F336",
+    "iconName": "emoji_75",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F336.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F336/512.gif",
+    "localSvg": "/emojis/emoji_1F336.svg",
+    "localPng": "/emojis/emoji_1F336.png"
+  },
+  "🏺": {
+    "original": "🏺",
+    "codePoint": "U+1F3FA",
+    "iconName": "emoji_76",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3FA.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3FA/512.gif",
+    "localSvg": "/emojis/emoji_1F3FA.svg",
+    "localPng": "/emojis/emoji_1F3FA.png"
+  },
+  "🍶": {
+    "original": "🍶",
+    "codePoint": "U+1F376",
+    "iconName": "emoji_77",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F376.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F376/512.gif",
+    "localSvg": "/emojis/emoji_1F376.svg",
+    "localPng": "/emojis/emoji_1F376.png"
+  },
+  "🌷": {
+    "original": "🌷",
+    "codePoint": "U+1F337",
+    "iconName": "emoji_78",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F337.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F337/512.gif",
+    "localSvg": "/emojis/emoji_1F337.svg",
+    "localPng": "/emojis/emoji_1F337.png"
+  },
+  "💜": {
+    "original": "💜",
+    "codePoint": "U+1F49C",
+    "iconName": "emoji_79",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F49C.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F49C/512.gif",
+    "localSvg": "/emojis/emoji_1F49C.svg",
+    "localPng": "/emojis/emoji_1F49C.png"
+  },
+  "🌺": {
+    "original": "🌺",
+    "codePoint": "U+1F33A",
+    "iconName": "emoji_80",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F33A.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F33A/512.gif",
+    "localSvg": "/emojis/emoji_1F33A.svg",
+    "localPng": "/emojis/emoji_1F33A.png"
+  },
+  "🪴": {
+    "original": "🪴",
+    "codePoint": "U+1FAB4",
+    "iconName": "emoji_81",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1FAB4.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1FAB4/512.gif",
+    "localSvg": "/emojis/emoji_1FAB4.svg",
+    "localPng": "/emojis/emoji_1FAB4.png"
+  },
+  "🐾": {
+    "original": "🐾",
+    "codePoint": "U+1F43E",
+    "iconName": "emoji_82",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F43E.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F43E/512.gif",
+    "localSvg": "/emojis/emoji_1F43E.svg",
+    "localPng": "/emojis/emoji_1F43E.png"
+  },
+  "🪨": {
+    "original": "🪨",
+    "codePoint": "U+1FAA8",
+    "iconName": "emoji_83",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1FAA8.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1FAA8/512.gif",
+    "localSvg": "/emojis/emoji_1FAA8.svg",
+    "localPng": "/emojis/emoji_1FAA8.png"
+  },
+  "🌵": {
+    "original": "🌵",
+    "codePoint": "U+1F335",
+    "iconName": "emoji_84",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F335.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F335/512.gif",
+    "localSvg": "/emojis/emoji_1F335.svg",
+    "localPng": "/emojis/emoji_1F335.png"
+  },
+  "🏜️": {
+    "original": "🏜️",
+    "codePoint": "U+1F3DC",
+    "iconName": "emoji_85",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3DC.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3DC/512.gif",
+    "localSvg": "/emojis/emoji_1F3DC.svg",
+    "localPng": "/emojis/emoji_1F3DC.png"
+  },
+  "⚽": {
+    "original": "⚽",
+    "codePoint": "U+26BD",
+    "iconName": "emoji_86",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/26BD.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/26BD/512.gif",
+    "localSvg": "/emojis/emoji_26BD.svg",
+    "localPng": "/emojis/emoji_26BD.png"
+  },
+  "🐹": {
+    "original": "🐹",
+    "codePoint": "U+1F439",
+    "iconName": "emoji_87",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F439.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F439/512.gif",
+    "localSvg": "/emojis/emoji_1F439.svg",
+    "localPng": "/emojis/emoji_1F439.png"
+  },
+  "🏰": {
+    "original": "🏰",
+    "codePoint": "U+1F3F0",
+    "iconName": "emoji_88",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3F0.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3F0/512.gif",
+    "localSvg": "/emojis/emoji_1F3F0.svg",
+    "localPng": "/emojis/emoji_1F3F0.png"
+  },
+  "🦜": {
+    "original": "🦜",
+    "codePoint": "U+1F99C",
+    "iconName": "emoji_89",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F99C.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F99C/512.gif",
+    "localSvg": "/emojis/emoji_1F99C.svg",
+    "localPng": "/emojis/emoji_1F99C.png"
+  },
+  "🦊": {
+    "original": "🦊",
+    "codePoint": "U+1F98A",
+    "iconName": "emoji_90",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F98A.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F98A/512.gif",
+    "localSvg": "/emojis/emoji_1F98A.svg",
+    "localPng": "/emojis/emoji_1F98A.png"
+  },
+  "🐶": {
+    "original": "🐶",
+    "codePoint": "U+1F436",
+    "iconName": "emoji_91",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F436.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F436/512.gif",
+    "localSvg": "/emojis/emoji_1F436.svg",
+    "localPng": "/emojis/emoji_1F436.png"
+  },
+  "🐕": {
+    "original": "🐕",
+    "codePoint": "U+1F415",
+    "iconName": "emoji_92",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F415.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F415/512.gif",
+    "localSvg": "/emojis/emoji_1F415.svg",
+    "localPng": "/emojis/emoji_1F415.png"
+  },
+  "🏅": {
+    "original": "🏅",
+    "codePoint": "U+1F3C5",
+    "iconName": "emoji_93",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3C5.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3C5/512.gif",
+    "localSvg": "/emojis/emoji_1F3C5.svg",
+    "localPng": "/emojis/emoji_1F3C5.png"
+  },
+  "🐱": {
+    "original": "🐱",
+    "codePoint": "U+1F431",
+    "iconName": "emoji_94",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F431.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F431/512.gif",
+    "localSvg": "/emojis/emoji_1F431.svg",
+    "localPng": "/emojis/emoji_1F431.png"
+  },
+  "🐛": {
+    "original": "🐛",
+    "codePoint": "U+1F41B",
+    "iconName": "emoji_95",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F41B.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F41B/512.gif",
+    "localSvg": "/emojis/emoji_1F41B.svg",
+    "localPng": "/emojis/emoji_1F41B.png"
+  },
+  "茧": {
+    "original": "茧",
+    "codePoint": "U+8327",
+    "iconName": "emoji_96",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/8327.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/8327/512.gif",
+    "localSvg": "/emojis/emoji_8327.svg",
+    "localPng": "/emojis/emoji_8327.png"
+  },
+  "🦋": {
+    "original": "🦋",
+    "codePoint": "U+1F98B",
+    "iconName": "emoji_97",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F98B.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F98B/512.gif",
+    "localSvg": "/emojis/emoji_1F98B.svg",
+    "localPng": "/emojis/emoji_1F98B.png"
+  },
+  "🦡": {
+    "original": "🦡",
+    "codePoint": "U+1F9A1",
+    "iconName": "emoji_98",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F9A1.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F9A1/512.gif",
+    "localSvg": "/emojis/emoji_1F9A1.svg",
+    "localPng": "/emojis/emoji_1F9A1.png"
+  },
+  "🌲": {
+    "original": "🌲",
+    "codePoint": "U+1F332",
+    "iconName": "emoji_99",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F332.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F332/512.gif",
+    "localSvg": "/emojis/emoji_1F332.svg",
+    "localPng": "/emojis/emoji_1F332.png"
+  },
+  "✨": {
+    "original": "✨",
+    "codePoint": "U+2728",
+    "iconName": "emoji_100",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2728.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/2728/512.gif",
+    "localSvg": "/emojis/emoji_2728.svg",
+    "localPng": "/emojis/emoji_2728.png"
+  },
+  "🏆": {
+    "original": "🏆",
+    "codePoint": "U+1F3C6",
+    "iconName": "emoji_101",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F3C6.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F3C6/512.gif",
+    "localSvg": "/emojis/emoji_1F3C6.svg",
+    "localPng": "/emojis/emoji_1F3C6.png"
+  },
+  "🎍": {
+    "original": "🎍",
+    "codePoint": "U+1F38D",
+    "iconName": "emoji_102",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F38D.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F38D/512.gif",
+    "localSvg": "/emojis/emoji_1F38D.svg",
+    "localPng": "/emojis/emoji_1F38D.png"
+  },
+  "🎋": {
+    "original": "🎋",
+    "codePoint": "U+1F38B",
+    "iconName": "emoji_103",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F38B.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F38B/512.gif",
+    "localSvg": "/emojis/emoji_1F38B.svg",
+    "localPng": "/emojis/emoji_1F38B.png"
+  },
+  "🐼": {
+    "original": "🐼",
+    "codePoint": "U+1F43C",
+    "iconName": "emoji_104",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F43C.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F43C/512.gif",
+    "localSvg": "/emojis/emoji_1F43C.svg",
+    "localPng": "/emojis/emoji_1F43C.png"
+  },
+  "🌴": {
+    "original": "🌴",
+    "codePoint": "U+1F334",
+    "iconName": "emoji_105",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F334.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F334/512.gif",
+    "localSvg": "/emojis/emoji_1F334.svg",
+    "localPng": "/emojis/emoji_1F334.png"
+  },
+  "🥥": {
+    "original": "🥥",
+    "codePoint": "U+1F965",
+    "iconName": "emoji_106",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F965.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F965/512.gif",
+    "localSvg": "/emojis/emoji_1F965.svg",
+    "localPng": "/emojis/emoji_1F965.png"
+  },
+  "🥤": {
+    "original": "🥤",
+    "codePoint": "U+1F964",
+    "iconName": "emoji_107",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F964.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F964/512.gif",
+    "localSvg": "/emojis/emoji_1F964.svg",
+    "localPng": "/emojis/emoji_1F964.png"
+  },
+  "🍰": {
+    "original": "🍰",
+    "codePoint": "U+1F370",
+    "iconName": "emoji_108",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F370.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F370/512.gif",
+    "localSvg": "/emojis/emoji_1F370.svg",
+    "localPng": "/emojis/emoji_1F370.png"
+  },
+  "🫐": {
+    "original": "🫐",
+    "codePoint": "U+1FAD0",
+    "iconName": "emoji_109",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1FAD0.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1FAD0/512.gif",
+    "localSvg": "/emojis/emoji_1FAD0.svg",
+    "localPng": "/emojis/emoji_1FAD0.png"
+  },
+  "🧃": {
+    "original": "🧃",
+    "codePoint": "U+1F9C3",
+    "iconName": "emoji_110",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F9C3.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F9C3/512.gif",
+    "localSvg": "/emojis/emoji_1F9C3.svg",
+    "localPng": "/emojis/emoji_1F9C3.png"
+  },
+  "🍷": {
+    "original": "🍷",
+    "codePoint": "U+1F377",
+    "iconName": "emoji_111",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F377.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F377/512.gif",
+    "localSvg": "/emojis/emoji_1F377.svg",
+    "localPng": "/emojis/emoji_1F377.png"
+  },
+  "🐵": {
+    "original": "🐵",
+    "codePoint": "U+1F435",
+    "iconName": "emoji_112",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F435.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F435/512.gif",
+    "localSvg": "/emojis/emoji_1F435.svg",
+    "localPng": "/emojis/emoji_1F435.png"
+  },
+  "🐒": {
+    "original": "🐒",
+    "codePoint": "U+1F412",
+    "iconName": "emoji_113",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F412.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F412/512.gif",
+    "localSvg": "/emojis/emoji_1F412.svg",
+    "localPng": "/emojis/emoji_1F412.png"
+  },
+  "🍌": {
+    "original": "🍌",
+    "codePoint": "U+1F34C",
+    "iconName": "emoji_114",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F34C.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F34C/512.gif",
+    "localSvg": "/emojis/emoji_1F34C.svg",
+    "localPng": "/emojis/emoji_1F34C.png"
+  },
+  "🥇": {
+    "original": "🥇",
+    "codePoint": "U+1F947",
+    "iconName": "emoji_115",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F947.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F947/512.gif",
+    "localSvg": "/emojis/emoji_1F947.svg",
+    "localPng": "/emojis/emoji_1F947.png"
+  },
+  "🐧": {
+    "original": "🐧",
+    "codePoint": "U+1F427",
+    "iconName": "emoji_116",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F427.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F427/512.gif",
+    "localSvg": "/emojis/emoji_1F427.svg",
+    "localPng": "/emojis/emoji_1F427.png"
+  },
+  "❄️": {
+    "original": "❄️",
+    "codePoint": "U+2744",
+    "iconName": "emoji_117",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2744.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/2744/512.gif",
+    "localSvg": "/emojis/emoji_2744.svg",
+    "localPng": "/emojis/emoji_2744.png"
+  },
+  "🦉": {
+    "original": "🦉",
+    "codePoint": "U+1F989",
+    "iconName": "emoji_118",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F989.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F989/512.gif",
+    "localSvg": "/emojis/emoji_1F989.svg",
+    "localPng": "/emojis/emoji_1F989.png"
+  },
+  "/owl": {
+    "original": "/owl",
+    "codePoint": "U+2F",
+    "iconName": "owl",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2F.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/2F/512.gif",
+    "localSvg": "/emojis/emoji_2F.svg",
+    "localPng": "/emojis/emoji_2F.png"
+  },
+  "🌙": {
+    "original": "🌙",
+    "codePoint": "U+1F319",
+    "iconName": "emoji_120",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F319.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F319/512.gif",
+    "localSvg": "/emojis/emoji_1F319.svg",
+    "localPng": "/emojis/emoji_1F319.png"
+  },
+  "🐬": {
+    "original": "🐬",
+    "codePoint": "U+1F42C",
+    "iconName": "emoji_121",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F42C.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F42C/512.gif",
+    "localSvg": "/emojis/emoji_1F42C.svg",
+    "localPng": "/emojis/emoji_1F42C.png"
+  },
+  " Trident": {
+    "original": " Trident",
+    "codePoint": "U+20",
+    "iconName": "Trident",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/20.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/20/512.gif",
+    "localSvg": "/emojis/emoji_20.svg",
+    "localPng": "/emojis/emoji_20.png"
+  },
+  "🍔": {
+    "original": "🍔",
+    "codePoint": "U+1F354",
+    "iconName": "emoji_123",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F354.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F354/512.gif",
+    "localSvg": "/emojis/emoji_1F354.svg",
+    "localPng": "/emojis/emoji_1F354.png"
+  },
+  "🍳": {
+    "original": "🍳",
+    "codePoint": "U+1F373",
+    "iconName": "emoji_124",
+    "twemojiUrl": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1F373.svg",
+    "notoUrl": "https://fonts.gstatic.com/s/e/notoemoji/latest/1F373/512.gif",
+    "localSvg": "/emojis/emoji_1F373.svg",
+    "localPng": "/emojis/emoji_1F373.png"
+  }
+}
