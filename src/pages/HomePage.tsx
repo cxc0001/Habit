@@ -1,9 +1,8 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, BarChart3, Sparkles, ChevronRight, LogOut, Trophy, ChevronDown } from 'lucide-react'
 import { Navigation } from '@/components/Navigation'
 import { HabitCard } from '@/components/HabitCard'
-
 import { BadgeModal } from '@/components/BadgeModal'
 import { CelebrationModal } from '@/components/CelebrationModal'
 import { BackgroundDecorations } from '@/components/BackgroundDecorations'
@@ -18,10 +17,19 @@ import { cn } from '@/lib/utils'
 export function HomePage() {
   const { user, logout } = useAuth()
   const { habits, checkIn, isCheckedInToday, getStreak, getTodayProgress } = useHabits()
-  const { inventory, activeProject, celebration, startProject, progressProject, clearCelebration, getProgress } = useFarm()
+  const { 
+    inventory, 
+    activeProject, 
+    celebration, 
+    startProject, 
+    progressProject, 
+    clearCelebration, 
+    getProgress,
+    isLoading: isFarmLoading,
+    isInitialized: isFarmInitialized
+  } = useFarm()
   const { addToast } = useToast()
   const navigate = useNavigate()
-
 
   const [isBadgeOpen, setIsBadgeOpen] = useState(false)
   const [showSeriesSelector, setShowSeriesSelector] = useState(false)
@@ -30,8 +38,41 @@ export function HomePage() {
   const { completed, total } = getTodayProgress()
   const projectProgress = getProgress()
 
-  // 获取当前培养项目的信息
-  const currentItem = activeProject ? getRewardById(activeProject.rewardItemId) : null
+  // 安全地获取当前项目信息
+  const currentItem = useMemo(() => {
+    if (!activeProject?.rewardItemId) return null
+    try {
+      return getRewardById(activeProject.rewardItemId)
+    } catch (error) {
+      console.warn('获取当前项目信息失败:', error)
+      return null
+    }
+  }, [activeProject])
+
+  // 安全地获取系列项目
+  const seriesItems = useMemo(() => {
+    if (!activeProject?.seriesName) return []
+    try {
+      return getRewardsBySeries(activeProject.seriesName)
+    } catch (error) {
+      console.warn('获取系列项目失败:', error)
+      return []
+    }
+  }, [activeProject])
+
+  // 检查数据是否就绪
+  const isDataReady = useMemo(() => {
+    // 等待 farm 数据初始化完成
+    if (!isFarmInitialized || isFarmLoading) return false
+    
+    // 如果有培养项目，检查相关数据是否就绪
+    if (activeProject) {
+      return !!currentItem && seriesItems.length > 0
+    }
+    
+    // 没有培养项目也是有效状态
+    return true
+  }, [activeProject, currentItem, seriesItems, isFarmLoading, isFarmInitialized])
 
   const handleCheckIn = (habitId: string) => {
     const success = checkIn(habitId)
@@ -40,7 +81,7 @@ export function HomePage() {
       if (activeProject) {
         const result = progressProject()
         if (result.completed && result.celebration) {
-          // 庆服弹窗会自动显示
+          // 庆祝弹窗会自动显示
         } else if (result.progressed) {
           addToast('打卡成功! 培养进度+1', 'success')
         }
@@ -71,6 +112,40 @@ export function HomePage() {
     logout()
     navigate('/login')
   }
+
+  // 渲染加载骨架屏
+  const renderFarmSkeleton = () => (
+    <div className="glass-card rounded-3xl p-4 md:p-6 relative overflow-hidden animate-pulse">
+      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-cute opacity-10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+      
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <div className="w-16 h-4 bg-muted rounded"></div>
+          <div className="w-8 h-3 bg-muted rounded"></div>
+        </div>
+        <div className="w-12 h-3 bg-muted rounded"></div>
+      </div>
+
+      <div className="flex items-center gap-4">
+        <div className="w-20 h-20 md:w-24 md:h-24 bg-muted rounded-2xl"></div>
+        <div className="flex-1 min-w-0 space-y-2">
+          <div className="h-5 bg-muted rounded w-3/4"></div>
+          <div className="h-3 bg-muted rounded w-1/2"></div>
+          <div className="h-3 bg-muted rounded-full"></div>
+          <div className="h-3 bg-muted rounded w-16 ml-auto"></div>
+        </div>
+      </div>
+
+      <div className="mt-3 pt-3 border-t border-dashed border-border">
+        <div className="h-3 bg-muted rounded w-20 mb-1.5"></div>
+        <div className="flex gap-1.5 flex-wrap">
+          {[1, 2, 3, 4, 5].map(i => (
+            <div key={i} className="w-8 h-8 bg-muted rounded-lg"></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 
   return (
     <div className="min-h-screen pb-24 md:pt-20 relative">
@@ -110,199 +185,212 @@ export function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="glass-card rounded-3xl p-4 md:p-6 relative overflow-hidden"
+            transition={{ delay: 0.1 }}
           >
-            {/* 装饰 */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-cute opacity-10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
-            
-            {activeProject && currentItem ? (
+            {/* 数据加载中显示骨架屏 */}
+            {isFarmLoading || !isDataReady ? (
+              renderFarmSkeleton()
+            ) : activeProject && currentItem ? (
               // 有正在培养的项目
-              <div className="relative">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className={cn('text-sm font-bold', (categoryInfo as any)[currentItem.category]?.color || 'text-primary')}>
-                      {(categoryInfo as any)[currentItem.category]?.emoji || '🌱'} {activeProject.seriesName}系列
-                    </span>
-                    <span className="text-xs text-muted-foreground">
-                      {activeProject.currentCheckIns}/{activeProject.requiredCheckIns}
-                    </span>
-                  </div>
-                  <button
-                    onClick={() => setIsBadgeOpen(true)}
-                    className="text-xs text-primary font-medium hover:underline"
-                  >
-                    查看徽章
-                  </button>
-                </div>
-
-                <div className="flex items-center gap-4">
-                  {/* 动画展示区 */}
-                  <motion.div
-                    className={cn(
-                      'w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-muted/50 flex items-center justify-center relative',
-                      'border-2 border-dashed border-primary/30'
-                    )}
-                  >
-                    <motion.span
-                      className={cn('text-4xl md:text-5xl', currentItem.animationClass)}
-                      key={activeProject.currentCheckIns}
-                      initial={{ scale: 0.8 }}
-                      animate={{ scale: 1 }}
-                      transition={{ type: 'spring', stiffness: 300 }}
-                    >
-                      {currentItem.emoji}
-                    </motion.span>
-                    
-                    {/* 生长动画光环 */}
-                    <motion.div
-                      className="absolute inset-0 rounded-2xl border-2 border-primary/30"
-                      animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0, 0.5] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                    />
-                  </motion.div>
-
-                  <div className="flex-1 min-w-0"> {/* 添加min-w-0防止flex溢出 */}
-                    <h3 className="text-lg md:text-xl font-black mb-1 truncate">{currentItem.name}</h3>
-                    <p className="text-xs md:text-sm text-muted-foreground mb-2">
-                      继续打卡来培养它吧!
-                    </p>
-                    
-                    {/* 进度条 */}
-                    <div className="relative h-3 md:h-4 bg-muted rounded-full overflow-hidden">
-                      <motion.div
-                        className="absolute inset-y-0 left-0 bg-gradient-primary rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: `${projectProgress}%` }}
-                        transition={{ duration: 0.5, ease: 'easeOut' }}
-                      />
-                      <motion.div
-                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
-                        animate={{ x: ['-100%', '100%'] }}
-                        transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                      />
+              <div className="glass-card rounded-3xl p-4 md:p-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-cute opacity-10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                
+                <div className="relative">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <span className={cn('text-sm font-bold', (categoryInfo as any)[currentItem.category]?.color || 'text-primary')}>
+                        {(categoryInfo as any)[currentItem.category]?.emoji || '🌱'} {activeProject.seriesName}系列
+                      </span>
+                      <span className="text-xs text-muted-foreground">
+                        {activeProject.currentCheckIns}/{activeProject.requiredCheckIns}
+                      </span>
                     </div>
-                    <p className="text-xs text-muted-foreground mt-1 text-right">
-                      {Math.round(projectProgress)}%
-                    </p>
+                    <button
+                      onClick={() => setIsBadgeOpen(true)}
+                      className="text-xs text-primary font-medium hover:underline"
+                    >
+                      查看徽章
+                    </button>
                   </div>
-                </div>
 
-                {/* 系列预览 - 减少间距和尺寸 */}
-                <div className="mt-3 pt-3 border-t border-dashed border-border">
-                  <p className="text-xs text-muted-foreground mb-1.5">系列徽章:</p>
-                  <div className="flex gap-1.5 flex-wrap">
-                    {getRewardsBySeries(activeProject.seriesName).map((item: any, i: number) => {
-                      const isUnlocked = inventory.badges.some(b => b.name === item.possibleHarvests[0].name)
-                      const isCurrent = item.id === activeProject.rewardItemId
-                      return (
+                  <div className="flex items-center gap-4">
+                    {/* 动画展示区 */}
+                    <motion.div
+                      className={cn(
+                        'w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-muted/50 flex items-center justify-center relative',
+                        'border-2 border-dashed border-primary/30'
+                      )}
+                    >
+                      <motion.span
+                        className={cn('text-4xl md:text-5xl', currentItem.animationClass)}
+                        key={activeProject.currentCheckIns}
+                        initial={{ scale: 0.8 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: 'spring', stiffness: 300 }}
+                      >
+                        {currentItem.emoji}
+                      </motion.span>
+                      
+                      {/* 生长动画光环 */}
+                      <motion.div
+                        className="absolute inset-0 rounded-2xl border-2 border-primary/30"
+                        animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0, 0.5] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      />
+                    </motion.div>
+
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg md:text-xl font-black mb-1 truncate">{currentItem.name}</h3>
+                      <p className="text-xs md:text-sm text-muted-foreground mb-2">
+                        继续打卡来培养它吧!
+                      </p>
+                      
+                      {/* 进度条 */}
+                      <div className="relative h-3 md:h-4 bg-muted rounded-full overflow-hidden">
                         <motion.div
-                          key={item.id}
-                          className={cn(
-                            'w-8 h-8 rounded-lg flex items-center justify-center text-lg border',
-                            isUnlocked 
-                              ? 'bg-primary/10 border-primary/30' 
-                              : isCurrent
-                              ? 'bg-secondary/10 border-secondary/30'
-                              : 'bg-muted/50 border-transparent grayscale opacity-40'
-                          )}
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          transition={{ delay: i * 0.05 }}
-                        >
-                          {item.emoji}
-                        </motion.div>
-                      )
-                    })}
+                          className="absolute inset-y-0 left-0 bg-gradient-primary rounded-full"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${projectProgress}%` }}
+                          transition={{ duration: 0.5, ease: 'easeOut' }}
+                        />
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                          animate={{ x: ['-100%', '100%'] }}
+                          transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
+                        />
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1 text-right">
+                        {Math.round(projectProgress)}%
+                      </p>
+                    </div>
                   </div>
+
+                  {/* 系列预览 */}
+                  {seriesItems.length > 0 && (
+                    <div className="mt-3 pt-3 border-t border-dashed border-border">
+                      <p className="text-xs text-muted-foreground mb-1.5">系列徽章:</p>
+                      <div className="flex gap-1.5 flex-wrap">
+                        {seriesItems.map((item: any, i: number) => {
+                          const isUnlocked = inventory.badges.some(b => b.name === item.possibleHarvests[0].name)
+                          const isCurrent = item.id === activeProject.rewardItemId
+                          return (
+                            <motion.div
+                              key={item.id}
+                              className={cn(
+                                'w-8 h-8 rounded-lg flex items-center justify-center text-lg border',
+                                isUnlocked 
+                                  ? 'bg-primary/10 border-primary/30' 
+                                  : isCurrent
+                                  ? 'bg-secondary/10 border-secondary/30'
+                                  : 'bg-muted/50 border-transparent grayscale opacity-40'
+                              )}
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              transition={{ delay: i * 0.05 }}
+                            >
+                              {item.emoji}
+                            </motion.div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ) : (
               // 没有培养项目 - 选择器
-              <div className="text-center py-2">
-                <motion.div
-                  className="text-4xl md:text-5xl mb-2"
-                  animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                >
-                  🌱
-                </motion.div>
-                <h3 className="text-lg md:text-xl font-black mb-1">选择一个系列开始培养</h3>
-                <p className="text-xs md:text-sm text-muted-foreground mb-3">
-                  每次打卡都会推进培养进度，完成后获得徽章!
-                </p>
-                
-                <motion.button
-                  onClick={() => setShowSeriesSelector(!showSeriesSelector)}
-                  className="btn-primary inline-flex items-center gap-2 text-sm py-2 px-4"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  选择培养项目
-                  <ChevronDown className={cn(
-                    'w-4 h-4 transition-transform',
-                    showSeriesSelector && 'rotate-180'
-                  )} />
-                </motion.button>
-
-                <AnimatePresence>
-                  {showSeriesSelector && (
-                    <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: 'auto' }}
-                      exit={{ opacity: 0, height: 0 }}
-                      className="mt-4 overflow-hidden"
+              <div className="glass-card rounded-3xl p-4 md:p-6 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-cute opacity-10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2" />
+                <div className="text-center py-2">
+                  <motion.div
+                    className="text-4xl md:text-5xl mb-2"
+                    animate={{ y: [0, -10, 0], rotate: [-5, 5, -5] }}
+                    transition={{ duration: 3, repeat: Infinity }}
+                  >
+                    🌱
+                  </motion.div>
+                  <h3 className="text-lg md:text-xl font-black mb-1">
+                    {isFarmLoading ? '加载中...' : '选择一个系列开始培养'}
+                  </h3>
+                  <p className="text-xs md:text-sm text-muted-foreground mb-3">
+                    {isFarmLoading ? '正在加载数据...' : '每次打卡都会推进培养进度，完成后获得徽章!'}
+                  </p>
+                  
+                  {!isFarmLoading && (
+                    <motion.button
+                      onClick={() => setShowSeriesSelector(!showSeriesSelector)}
+                      className="btn-primary inline-flex items-center gap-2 text-sm py-2 px-4"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
-                      {/* 分类切换 */}
-                      <div className="flex justify-center gap-2 mb-4 flex-wrap">
-                        {(['plant', 'animal', 'cooking'] as const).map(cat => (
-                          <button
-                            key={cat}
-                            onClick={() => setSelectedCategory(cat)}
-                            className={cn(
-                              'px-4 py-2 rounded-xl text-sm font-bold transition-all',
-                              selectedCategory === cat
-                                ? 'bg-primary text-white'
-                                : 'bg-muted text-muted-foreground hover:bg-muted/80'
-                            )}
-                          >
-                            {(categoryInfo as any)[cat].emoji} {(categoryInfo as any)[cat].label}
-                          </button>
-                        ))}
-                      </div>
-
-                      {/* 系列列表 */}
-                      <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 max-h-48 overflow-y-auto">
-                        {seriesGroups[selectedCategory].map((seriesName, i) => {
-                          const firstItem = getRewardsBySeries(seriesName)[0]
-                          const isCompleted = inventory.completedSeries.includes(seriesName)
-                          return (
-                            <motion.button
-                              key={seriesName}
-                              onClick={() => !isCompleted && handleStartSeries(seriesName)}
-                              disabled={isCompleted}
-                              className={cn(
-                                'p-3 rounded-2xl border-2 text-center transition-all',
-                                isCompleted
-                                  ? 'border-primary/30 bg-primary/5 opacity-60'
-                                  : 'border-border bg-card hover:border-primary hover:bg-primary/5'
-                              )}
-                              initial={{ opacity: 0, scale: 0.8 }}
-                              animate={{ opacity: 1, scale: 1 }}
-                              transition={{ delay: i * 0.03 }}
-                              whileHover={!isCompleted ? { scale: 1.05 } : undefined}
-                            >
-                              <span className="text-2xl block mb-1">{firstItem?.emoji}</span>
-                              <span className="text-xs font-medium">{seriesName}</span>
-                              {isCompleted && (
-                                <span className="text-xs text-primary block">已完成</span>
-                              )}
-                            </motion.button>
-                          )
-                        })}
-                      </div>
-                    </motion.div>
+                      选择培养项目
+                      <ChevronDown className={cn(
+                        'w-4 h-4 transition-transform',
+                        showSeriesSelector && 'rotate-180'
+                      )} />
+                    </motion.button>
                   )}
-                </AnimatePresence>
+
+                  <AnimatePresence>
+                    {showSeriesSelector && (
+                      <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="mt-4 overflow-hidden"
+                      >
+                        {/* 分类切换 */}
+                        <div className="flex justify-center gap-2 mb-4 flex-wrap">
+                          {(['plant', 'animal', 'cooking'] as const).map(cat => (
+                            <button
+                              key={cat}
+                              onClick={() => setSelectedCategory(cat)}
+                              className={cn(
+                                'px-4 py-2 rounded-xl text-sm font-bold transition-all',
+                                selectedCategory === cat
+                                  ? 'bg-primary text-white'
+                                  : 'bg-muted text-muted-foreground hover:bg-muted/80'
+                              )}
+                            >
+                              {(categoryInfo as any)[cat].emoji} {(categoryInfo as any)[cat].label}
+                            </button>
+                          ))}
+                        </div>
+
+                        {/* 系列列表 */}
+                        <div className="grid grid-cols-3 sm:grid-cols-3 gap-2 max-h-48 overflow-y-auto">
+                          {seriesGroups[selectedCategory].map((seriesName, i) => {
+                            const firstItem = getRewardsBySeries(seriesName)[0]
+                            const isCompleted = inventory.completedSeries.includes(seriesName)
+                            return (
+                              <motion.button
+                                key={seriesName}
+                                onClick={() => !isCompleted && handleStartSeries(seriesName)}
+                                disabled={isCompleted}
+                                className={cn(
+                                  'p-3 rounded-2xl border-2 text-center transition-all',
+                                  isCompleted
+                                    ? 'border-primary/30 bg-primary/5 opacity-60'
+                                    : 'border-border bg-card hover:border-primary hover:bg-primary/5'
+                                )}
+                                initial={{ opacity: 0, scale: 0.8 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: i * 0.03 }}
+                                whileHover={!isCompleted ? { scale: 1.05 } : undefined}
+                              >
+                                <span className="text-2xl block mb-1">{firstItem?.emoji}</span>
+                                <span className="text-xs font-medium">{seriesName}</span>
+                                {isCompleted && (
+                                  <span className="text-xs text-primary block">已完成</span>
+                                )}
+                              </motion.button>
+                            )
+                          })}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
             )}
           </motion.div>
@@ -400,7 +488,6 @@ export function HomePage() {
       </main>
 
       {/* Modals */}
-
       <BadgeModal isOpen={isBadgeOpen} onClose={() => setIsBadgeOpen(false)} />
       <CelebrationModal data={celebration} onClose={clearCelebration} />
     </div>

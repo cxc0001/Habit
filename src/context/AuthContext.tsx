@@ -15,10 +15,6 @@ interface RegisterResponse {
   refreshToken: string;
 }
 
-interface ProfileResponse {
-  user: User;
-}
-
 interface RefreshResponse {
   accessToken: string;
   refreshToken: string; // 新增：后端会返回新的refresh_token
@@ -98,6 +94,8 @@ const setupAxiosInterceptors = () => {
     config => {
       const token = localStorage.getItem('access_token');
       if (token) {
+        // 确保 headers 存在
+        config.headers = config.headers || {};
         config.headers.Authorization = `Bearer ${token}`;
       }
       return config;
@@ -111,14 +109,15 @@ const setupAxiosInterceptors = () => {
   axios.interceptors.response.use(
     response => response,
     async error => {
-      const originalRequest = error.config;
-
+      const originalRequest = error.config as any;
+      
       // 如果是401错误且不是刷新token或登录/注册请求
       if (error.response?.status === 401 && !originalRequest._retry) {
         // 排除认证相关的API
-        if (originalRequest.url.includes('/auth/login') || 
-            originalRequest.url.includes('/auth/register') ||
-            originalRequest.url.includes('/auth/refresh')) {
+        const requestUrl = originalRequest.url || '';
+        if (requestUrl.includes('/auth/login') || 
+            requestUrl.includes('/auth/register') ||
+            requestUrl.includes('/auth/refresh')) {
           return Promise.reject(error);
         }
 
@@ -128,6 +127,7 @@ const setupAxiosInterceptors = () => {
             failedQueue.push({ resolve, reject });
           })
             .then(token => {
+              originalRequest.headers = originalRequest.headers || {};
               originalRequest.headers.Authorization = `Bearer ${token}`;
               return axios(originalRequest);
             })
@@ -146,6 +146,7 @@ const setupAxiosInterceptors = () => {
             processQueue(null, refreshResult.accessToken);
             
             // 重试原始请求
+            originalRequest.headers = originalRequest.headers || {};
             originalRequest.headers.Authorization = `Bearer ${refreshResult.accessToken}`;
             return axios(originalRequest);
           } else {
@@ -185,12 +186,12 @@ const logoutUser = () => {
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [isLoading, setIsLoading] = useState(true)
-  const refreshTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const refreshTimerRef = useRef<number | null>(null)
 
   // 清除刷新定时器
   const clearRefreshTimer = useCallback(() => {
     if (refreshTimerRef.current) {
-      clearTimeout(refreshTimerRef.current);
+      clearInterval(refreshTimerRef.current);
       refreshTimerRef.current = null;
     }
   }, [])
@@ -204,7 +205,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (!refreshToken) return;
 
     // 每14分钟刷新一次token（access_token有效期为15分钟）
-    refreshTimerRef.current = setInterval(async () => {
+    refreshTimerRef.current = window.setInterval(async () => {
       try {
         await refreshTokens();
         console.log('定时刷新tokens成功');
@@ -235,7 +236,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const fetchUserProfile = useCallback(async () => {
     try {
       const response = await authAPI.getUserProfile();
-      const userData = response.data.user;
+      const userData = (response.data as any).user;
       
       setUser(userData);
       localStorage.setItem('user', JSON.stringify(userData));
