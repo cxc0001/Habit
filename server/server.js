@@ -415,11 +415,13 @@ app.post('/api/auth/refresh', (req, res) => {
         return res.status(403).json({ message: 'User not found' });
       }
 
-      // Generate new access token
+      // 生成新的 tokens
       const newAccessToken = generateAccessToken(dbUser);
+      const newRefreshToken = generateRefreshToken(dbUser); // 重新生成30天的refresh_token
 
       res.json({
-        accessToken: newAccessToken
+        accessToken: newAccessToken,
+        refreshToken: newRefreshToken  // 返回新的refresh_token
       });
     });
   } catch (error) {
